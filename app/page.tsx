@@ -6,11 +6,13 @@ import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { TimelineSection } from "@/components/timeline-section"
 import { RecetteSection } from "@/components/recette-section"
+import Link from 'next/link'
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
+      <Link href="/About"> A propos </Link>
       <HeroSection />
       <AboutSection />
       <ExpertiseSection />

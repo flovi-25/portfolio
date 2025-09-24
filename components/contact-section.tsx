@@ -44,7 +44,8 @@ export function ContactSection() {
         </div>
 
         <div className="grid md:grid-cols-1 gap-6 mb-8 max-w-md mx-auto">
-          {expertiseAreas.map((area, index) => (
+          {expertiseAreas.map((area, index) => (// test
+      
             <Card key={index} className="p-8 text-center hover:mx-auto">
               <area.icon className="w-8 h-8 text-accent mx-auto mb-4" />
               <h3 className="font-semibold mb-3 text-balance">{area.title}</h3>
