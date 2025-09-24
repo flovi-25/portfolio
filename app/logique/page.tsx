@@ -21,10 +21,10 @@ export default function LogiquePage() {
       {/* Hero Section */}
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-slate-800">
             Ma participation à l'enregistrement d'une émission 100% logique :
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-600 mb-8">une expérience incroyablement enrichissante</p>
+          <p className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-slate-800">une expérience incroyablement enrichissante</p>
         </div>
       </section>
 
