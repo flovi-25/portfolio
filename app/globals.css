@@ -37,6 +37,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --animate-in: "";
+  --animate-out: "";
 }
 
 .dark {
@@ -72,6 +74,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+  --animate-in: "";
+  --animate-out: "";
 }
 
 @theme inline {
@@ -122,5 +126,91 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation-name: enter;
+    animation-duration: var(--animate-duration, 150ms);
+    animation-timing-function: var(--animate-ease, ease);
+    animation-fill-mode: both;
+  }
+
+  .animate-out {
+    animation-name: exit;
+    animation-duration: var(--animate-duration, 150ms);
+    animation-timing-function: var(--animate-ease, ease);
+    animation-fill-mode: both;
+  }
+
+  .slide-out-to-right-52 {
+    animation-name: slide-out-to-right-52;
+  }
+
+  .slide-out-to-left-52 {
+    animation-name: slide-out-to-left-52;
+  }
+
+  .slide-out-to-right {
+    animation-name: slide-out-to-right;
+  }
+
+  .slide-out-to-left {
+    animation-name: slide-out-to-left;
+  }
+
+  .slide-out-to-top {
+    animation-name: slide-out-to-top;
+  }
+
+  .slide-out-to-bottom {
+    animation-name: slide-out-to-bottom;
+  }
+
+  .slide-out-to-right-full {
+    animation-name: slide-out-to-right-full;
+  }
+}
+
+@keyframes slide-out-to-right-52 {
+  to {
+    transform: translateX(13rem);
+  }
+}
+
+@keyframes slide-out-to-left-52 {
+  to {
+    transform: translateX(-13rem);
+  }
+}
+
+@keyframes slide-out-to-right {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-out-to-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-out-to-top {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slide-out-to-bottom {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slide-out-to-right-full {
+  to {
+    transform: translateX(100%);
   }
 }

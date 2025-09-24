@@ -102,72 +102,75 @@ const timelineData = [
 
 export function TimelineSection() {
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-pink-50 to-purple-50">
+    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-pink-50 to-purple-50">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-slate-800">Mon Parcours</h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-slate-800">
+            Mon Parcours
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
             Une évolution professionnelle riche, alliant expertise technique et passion créative
           </p>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Ligne centrale */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-400 to-purple-500 h-full rounded-full shadow-lg"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-400 to-purple-500 h-full rounded-full shadow-lg"></div>
 
           {timelineData.map((item, index) => (
-            <div key={item.id} className="relative mb-16 last:mb-0">
-              {/* Dot sur la ligne */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-blue-400 rounded-full shadow-lg z-10 flex items-center justify-center">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+            <div key={item.id} className="relative mb-8 sm:mb-12 md:mb-16 last:mb-0">
+              <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 top-6 md:top-0 w-4 h-4 md:w-6 md:h-6 bg-white border-2 md:border-4 border-blue-400 rounded-full shadow-lg z-10 flex items-center justify-center">
+                <div className="w-1 h-1 md:w-2 md:h-2 bg-blue-400 rounded-full"></div>
               </div>
 
-              {/* Contenu alterné */}
-              <div className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
-                {/* Icône Camera */}
-                <div className={`w-1/2 ${index % 2 === 0 ? "pr-12" : "pl-12"}`}>
-                  <div className={`${index % 2 === 0 ? "text-right" : "text-left"}`}>
-                    <div className="inline-flex items-center justify-center w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-200">
-                      <Camera className="w-16 h-16 text-blue-500" />
+              <div className={`md:flex md:items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
+                {/* Icon section */}
+                <div
+                  className={`w-full md:w-1/2 mb-4 md:mb-0 pl-12 md:pl-0 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}
+                >
+                  <div className={`md:${index % 2 === 0 ? "text-right" : "text-left"}`}>
+                    <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-200">
+                      <Camera className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 text-blue-500" />
                     </div>
                   </div>
                 </div>
 
-                {/* Descriptif */}
-                <div className={`w-1/2 ${index % 2 === 0 ? "pl-12" : "pr-12"}`}>
-                  <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 border border-slate-100">
+                {/* Content section */}
+                <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${index % 2 === 0 ? "md:pl-12" : "md:pr-12"}`}>
+                  <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 hover:shadow-2xl transition-all duration-300 border border-slate-100">
                     {/* Badge année */}
-                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                      <Calendar className="w-4 h-4" />
+                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
+                      <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                       {item.year}
                     </div>
 
                     {/* Titre et entreprise */}
-                    <h3 className="text-2xl font-bold text-slate-800 mb-2">{item.title}</h3>
-                    <div className="flex items-center gap-2 text-blue-600 font-semibold mb-2">
-                      <Award className="w-4 h-4" />
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 mb-2">{item.title}</h3>
+                    <div className="flex items-center gap-2 text-blue-600 font-semibold mb-2 text-sm sm:text-base">
+                      <Award className="w-3 h-3 sm:w-4 sm:h-4" />
                       {item.company}
                     </div>
-                    <div className="flex items-center gap-2 text-slate-500 text-sm mb-4">
-                      <MapPin className="w-4 h-4" />
+                    <div className="flex items-center gap-2 text-slate-500 text-xs sm:text-sm mb-3 sm:mb-4">
+                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
                       {item.location}
                     </div>
 
                     {/* Description */}
-                    <div className="text-slate-600 leading-relaxed mb-6">{item.description}</div>
+                    <div className="text-slate-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+                      {item.description}
+                    </div>
 
                     {/* Réalisations */}
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-slate-700 text-sm uppercase tracking-wide">
+                      <h4 className="font-semibold text-slate-700 text-xs sm:text-sm uppercase tracking-wide">
                         Réalisations clés
                       </h4>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1 sm:gap-2">
                         {item.achievements.map((achievement, i) => (
                           <span
                             key={i}
-                            className="bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium border border-blue-100"
+                            className="bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs font-medium border border-blue-100"
                           >
                             {achievement}
                           </span>

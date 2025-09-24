@@ -1,33 +1,49 @@
 import { Button } from "@/components/ui/button"
-import { FileText, Mail } from "lucide-react"
-import { Card } from "@/components/ui/card"
-import { Linkedin, Instagram} from "lucide-react"
+import { FileText, Mail, Menu, User } from "lucide-react"
+import { Linkedin, Instagram } from "lucide-react"
+import Link from "next/link"
 
 export function Header() {
   return (
-    <header className="w-full px-6 py-4 bg-gradient-to-br from-pink-50 to-purple-50 flex items-center gap-20 ">
-      <div className="text-accent font-medium text-lg">florence viprey</div>
+    <header className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-pink-50 to-purple-50">
+      <div className="flex items-center justify-between">
+        <Link
+          href="/"
+          className="text-accent font-medium text-base sm:text-lg md:text-xl hover:opacity-80 transition-opacity"
+        >
+          florence viprey
+        </Link>
 
-      <div className="flex items-center gap-3">
-        <Button variant="ghost" size="xl" className="text-foreground hover:text-accent">
-          <FileText className="w-5 h-5 mr-2" />
-          CV en FR
-        </Button>
+        <div className="hidden lg:flex items-center gap-2 xl:gap-3">
+          <Button variant="ghost" size="sm" className="text-foreground hover:text-accent text-sm" asChild>
+            <Link href="/about">
+              <User className="w-4 h-4 mr-1" />À propos
+            </Link>
+          </Button>
 
- <div className="flex items-center gap-3">
-  <Button variant="ghost" size="xl" className="text-foreground hover:text-accent flex items-center gap-2">
-    <Linkedin className="w-5 h-5" />
-    <span className="font-semibold">LinkedIn</span>
-  </Button>
-  
-  <Button variant="ghost" size="xl" className="text-foreground hover:text-accent flex items-center gap-2">
-    <Instagram className="w-5 h-5" />
-    <span className="font-semibold">Instagram</span>
-  </Button>
-</div>
-                  <Button variant="ghost" size="xl" className="text-foreground hover:text-accent">
-          <Mail className="w-4 h-4 mr-2" />
-          CONTACT
+          <Button variant="ghost" size="sm" className="text-foreground hover:text-accent text-sm">
+            <FileText className="w-4 h-4 mr-1" />
+            CV en FR
+          </Button>
+
+          <Button variant="ghost" size="sm" className="text-foreground hover:text-accent text-sm">
+            <Linkedin className="w-4 h-4 mr-1" />
+            LinkedIn
+          </Button>
+
+          <Button variant="ghost" size="sm" className="text-foreground hover:text-accent text-sm">
+            <Instagram className="w-4 h-4 mr-1" />
+            Instagram
+          </Button>
+
+          <Button variant="ghost" size="sm" className="text-foreground hover:text-accent text-sm">
+            <Mail className="w-4 h-4 mr-1" />
+            CONTACT
+          </Button>
+        </div>
+
+        <Button variant="ghost" size="sm" className="lg:hidden">
+          <Menu className="w-5 h-5" />
         </Button>
       </div>
     </header>
