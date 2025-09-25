@@ -129,7 +129,8 @@ export default function LogiquePage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-20">
+      {/* Slider Section */}
+      <section className="py-4 sm:py-6 lg:py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative">
             <div
@@ -171,11 +172,19 @@ export default function LogiquePage() {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                    index === currentSlide ? "bg-purple-600 scale-110" : "bg-gray-300 hover:bg-gray-400"
+                  className={`relative transition-all duration-200 flex items-center justify-center ${
+                    index === currentSlide ? "w-6 h-6" : "w-6 h-6 hover:scale-110"
                   }`}
                   aria-label={`Aller à l'image ${index + 1}`}
-                />
+                >
+                  {index === currentSlide ? (
+                    <div className="w-6 h-6 rounded-full border-2 border-purple-600 bg-transparent flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-purple-600"></div>
+                    </div>
+                  ) : (
+                    <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+                  )}
+                </button>
               ))}
             </div>
           </div>
