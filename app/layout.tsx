@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
+import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
@@ -17,6 +18,33 @@ const playfair = Playfair_Display({
   display: "swap",
 })
 
+const geometria = localFont({
+  src: [
+    {
+      path: "./fonts/Geometria-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Geometria-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Geometria-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Geometria-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-geometria",
+  display: "swap",
+})
+
 export const metadata: Metadata = {
   title: "Florence Viprey - Portfolio",
   description: "Chef de projet en Recherche et Développement en Agro-alimentaire",
@@ -29,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${playfair.variable} ${geometria.variable}`}>
       <body className="font-sans antialiased">
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />

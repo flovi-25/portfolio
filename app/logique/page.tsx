@@ -21,10 +21,10 @@ export default function LogiquePage() {
       {/* Hero Section */}
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-slate-800">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light mb-4 sm:mb-6 text-purple-800">
             Ma participation à l'enregistrement d'une émission 100% logique :
           </h1>
-          <p className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-slate-800">
+          <p className="text-2xl sm:text-3xl md:text-5xl font-geometria font-medium mb-4 sm:mb-6 text-slate-800">
             une expérience incroyablement enrichissante
           </p>
         </div>
@@ -34,7 +34,7 @@ export default function LogiquePage() {
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto mb-12">
-            <p className="text-lg leading-relaxed text-slate-700 text-justify">
+            <p className="text-lg font-geometria leading-relaxed text-slate-700 text-justify">
               Participer à l'enregistrement d'une émission 100% logique a été une expérience extraordinaire qui m'a
               permis de découvrir un univers fascinant où la réflexion, la stratégie et l'analyse se mélangent dans un
               cadre ludique et stimulant. Cette aventure télévisuelle m'a confronté à des défis intellectuels variés,

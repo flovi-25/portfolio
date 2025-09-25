@@ -15,6 +15,18 @@ export function ContactSection() {
           <p>Échangeons !</p>
         </div>
 
+        <div className="mb-6 sm:mb-10">
+          <div className="max-w-md mx-auto">
+            <Button
+              size="lg"
+              className="w-full px-8 sm:px-12 md:px-16 py-3 sm:py-4 bg-accent hover:bg-accent/90 text-base sm:text-lg md:text-xl text-accent-foreground"
+            >
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              Prendre Contact
+            </Button>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 max-w-md mx-auto">
           <Card className="p-4 sm:p-6 md:p-8 text-center hover:shadow-lg transition-shadow">
             <Linkedin className="w-8 h-8 sm:w-9 sm:h-9 text-accent mx-auto mb-3 sm:mb-4" />
@@ -27,16 +39,6 @@ export function ContactSection() {
             <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Instagram</h3>
             <p className="text-muted-foreground text-xs sm:text-sm">@florences_challenges</p>
           </Card>
-        </div>
-
-        <div className="mb-6 sm:mb-10">
-          <Button
-            size="lg"
-            className="w-full sm:w-auto px-8 sm:px-12 md:px-16 py-3 sm:py-4 bg-accent hover:bg-accent/90 text-base sm:text-lg md:text-xl text-accent-foreground"
-          >
-            <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-            Prendre Contact
-          </Button>
         </div>
       </div>
     </section>

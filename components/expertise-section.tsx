@@ -26,7 +26,7 @@ const expertiseAreas = [
     icon: Scissors,
     title: "Créations Ludiques",
     description: " Quelques exemples",
-    link: "/creations-ludiques",
+    link: "/creations",
   },
   {
     icon: Lightbulb,

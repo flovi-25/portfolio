@@ -1,0 +1,70 @@
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+import Image from "next/image"
+import { ArrowLeft } from "heroicons-react"
+import Link from "next/link"
+
+export default function VoyagesPage() {
+  return (
+  <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
+      {/* Header */}
+      <Header />
+      <header className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <Link href="/" className="text-blue-600 hover:text-blue-800 flex items-center gap-2">
+            <ArrowLeft className="h-5 w-5" />
+            Retour à l'accueil
+          </Link>
+        </div>
+      </header>
+
+      {/* Quote Section */}
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Placeholder Image */}
+          <div className="mb-8">
+            <div className="w-full max-w-2xl mx-auto h-32 border-2 border-gray-300 bg-gray-50 flex items-center justify-center">
+              <Image src="/placeholder.svg" width={800} height={400} className="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          {/* Quote */}
+          <blockquote className="text-lg font-geometria md:text-xl text-gray-800 mb-4 leading-relaxed">
+            "Le véritable voyage de découverte ne consiste pas à chercher de nouveaux paysages, mais à avoir de nouveaux
+            yeux."
+          </blockquote>
+
+          {/* Attribution */}
+          <cite className="text-gray-600 italic text-base">Marcel Proust</cite>
+        </div>
+      </section>
+
+      {/* Travel Content Section */}
+      <section className="bg-gray-100 py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Main Title */}
+          <h1 className="text-xl md:text-xl font-bold font-geometria text-black mb-8 leading-tight">
+            <span className="font-serif font-light text-purple-600">Voyager</span>, c'est partir à l'aventure à chaque instant.
+          </h1>
+
+          {/* Content Paragraphs */}
+          <div className="space-y-6 text-gray-800 text-base font-geometria md:text-lg leading-relaxed">
+            <p>
+              Un voyage est une expérience chargée en émotion et en découverte. Il est une source inépuisable de
+              nouveaux défis et de découvertes. Il est aussi être l'occasion de sortir de sa routine et de se dépasser
+              face à des situations nouvelles et souvent imprévues. Voyager c'est aussi apprendre à se passer du
+              superflu et d'aller à l'essentiel en appréciant les bonheurs plus simples.
+            </p>
+
+            <p>
+              En outre le voyage permet surtout d'ouvrir son esprit à d'autres façon de penser et à développer sa
+              créativité.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  )
+}

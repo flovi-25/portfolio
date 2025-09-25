@@ -5,8 +5,8 @@ export function GallerySection() {
     <section className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Galerie</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light font-serif text-purple-700 text-foreground mb-4">Galerie</h2>
+          <p className="text-lg font-geometria text-muted-foreground max-w-2xl mx-auto">
             Découvrez quelques moments marquants de mes aventures et créations
           </p>
         </div>
