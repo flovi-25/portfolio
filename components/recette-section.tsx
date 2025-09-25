@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Clock, Users, ChefHat, Star, Heart, Share2, Utensils, Flame, Camera } from "lucide-react"
+import { Clock, Users, ChefHat, Heart, Share2, Utensils, Flame, Camera } from "lucide-react"
 
 const recipeData = {
   title: "Coques de Macarons",
@@ -12,7 +12,7 @@ const recipeData = {
   cookTime: "21 min",
   totalTime: "45 min",
   servings: 20,
-  
+
   ingredients: [
     {
       category: "Pré-mélange sucre glace et amande",
@@ -100,15 +100,12 @@ export function RecetteSection() {
 
   return (
     <section className="py-12 px-6 bg-gradient-to-br from-purple-50 to-pink-50">
-
-          <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text--slate-800">Bonus</h2>
-          
-         </div>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-slate-800">Bonus</h2>
+        </div>
 
-      <div className="max-w-6xl mx-auto">
         {/* Header de la recette */}
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden mb-8">
           <div className="md:flex">
@@ -156,7 +153,6 @@ export function RecetteSection() {
                   <div className="text-sm font-semibold text-gray-700">{recipeData.difficulty}</div>
                   <div className="text-xs text-gray-500">Difficulté</div>
                 </div>
-                
               </div>
             </div>
           </div>

@@ -93,17 +93,49 @@ export default function LogiquePage() {
     setCurrentSlide(index)
   }
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true)
+    setStartX(e.touches[0].clientX)
+    setCurrentX(e.touches[0].clientX)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return
+    setCurrentX(e.touches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (!isDragging) return
+
+    const diff = startX - currentX
+    const threshold = 50 // Minimum distance to trigger slide change
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        // Swipe left - next slide
+        setCurrentSlide((prev) => (prev + 1) % images.length)
+      } else {
+        // Swipe right - previous slide
+        setCurrentSlide((prev) => (prev - 1 + images.length) % images.length)
+      }
+    }
+
+    setIsDragging(false)
+    setStartX(0)
+    setCurrentX(0)
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
       {showCursor && (
         <div
-          className="fixed pointer-events-none z-50 transform -translate-x-1/2 -translate-y-full"
+          className="fixed pointer-events-none z-50 transform -translate-x-1/2 -translate-y-full hidden md:block"
           style={{
             left: cursorPosition.x,
             top: cursorPosition.y - 10,
           }}
         >
-          <div className="bg-black/80 text-white px-3 py-2 rounded-md text-xs font-medium uppercase tracking-wide whitespace-nowrap">
+          <div className="bg-black/90 text-white px-3 py-2 rounded-md text-xs font-medium uppercase tracking-wide whitespace-nowrap shadow-lg">
             Click & Swipe
           </div>
         </div>
@@ -135,12 +167,16 @@ export default function LogiquePage() {
           <div className="relative">
             <div
               ref={sliderRef}
-              className="relative overflow-hidden rounded-lg cursor-none select-none"
+              className="relative overflow-hidden rounded-lg select-none"
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              style={{ cursor: showCursor ? "none" : "grab" }}
             >
               <Card className="border-0 shadow-lg">
                 <div className="aspect-[4/3] relative">

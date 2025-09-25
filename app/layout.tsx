@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import localFont from "next/font/local"
-import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
 
@@ -60,7 +59,6 @@ export default function RootLayout({
     <html lang="fr" className={`${inter.variable} ${playfair.variable} ${geometria.variable}`}>
       <body className="font-sans antialiased">
         <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
       </body>
     </html>
   )
