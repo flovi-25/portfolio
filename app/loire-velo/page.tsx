@@ -36,15 +36,12 @@ export default function LoireVeloPage() {
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 sm:p-12 shadow-xl">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Un Parcours Exceptionnel</h2>
             <div className="prose prose-lg max-w-none text-gray-700">
-              <p className="text-lg sm:text-xl leading-relaxed mb-6">
+              <p className="text-lg sm:text-xl leading-relaxed mb-6 text-justify">
                 De Blois à Chambord en passant par Chaumond, Amboise, Chenonceau ou Cheverny, que notre patrimoine
                 français est époustouflant. Ce périple fut une parenthèse suspendue dans le temps au rythme doux de mon
                 pédalier et de ma fille de 3 ans (bien installée dans sa remorque 😴). Il marqua un tournant dans nos
                 vies, nous prouvant que les aventures n'ont pas d'âge requis et que la seule limite à nos défis est
-                notre volonté à les accomplir.
-              </p>
-              <p className="text-lg sm:text-xl leading-relaxed">
-                De Nevers à Saint-Nazaire, en passant par Orléans, Blois, Tours et Angers, chaque étape révèle les
+                notre volonté à les accomplir. <br/> De Nevers à Saint-Nazaire, en passant par Orléans, Blois, Tours et Angers, chaque étape révèle les
                 trésors du Val de Loire, classé au patrimoine mondial de l'UNESCO. Une aventure qui mêle sport, culture
                 et découverte du patrimoine français.
               </p>

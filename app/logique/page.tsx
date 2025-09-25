@@ -24,14 +24,28 @@ export default function LogiquePage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-slate-800">
             Ma participation à l'enregistrement d'une émission 100% logique :
           </h1>
-          <p className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-slate-800">une expérience incroyablement enrichissante</p>
+          <p className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-slate-800">
+            une expérience incroyablement enrichissante
+          </p>
         </div>
       </section>
 
       {/* Content Section */}
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* image placeholder - will be added later */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <p className="text-lg leading-relaxed text-slate-700 text-justify">
+              Participer à l'enregistrement d'une émission 100% logique a été une expérience extraordinaire qui m'a
+              permis de découvrir un univers fascinant où la réflexion, la stratégie et l'analyse se mélangent dans un
+              cadre ludique et stimulant. Cette aventure télévisuelle m'a confronté à des défis intellectuels variés,
+              allant des énigmes mathématiques aux puzzles de logique pure, en passant par des jeux de déduction qui ont
+              mis à l'épreuve ma capacité à raisonner sous pression. L'atmosphère du plateau, l'énergie de l'équipe de
+              production et la bienveillance des autres candidats ont créé un environnement propice à l'épanouissement
+              intellectuel. Cette expérience m'a non seulement permis de tester mes limites cognitives, mais aussi de
+              partager ma passion pour les défis logiques avec un public plus large, tout en découvrant de nouvelles
+              approches de résolution de problèmes grâce aux échanges avec les autres participants.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Image 1 */}
@@ -41,6 +55,7 @@ export default function LogiquePage() {
                 <div className="text-center text-muted-foreground">
                   <div className="w-16 h-16 mx-auto mb-4 bg-white/80 rounded-full flex items-center justify-center">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     {/* logo cadre avec montagne et soleil */}
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"

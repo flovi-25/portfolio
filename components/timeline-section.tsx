@@ -1,4 +1,47 @@
+"use client"
+
 import { Calendar, MapPin, Award, Camera } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+
+const animationData = [
+  { style: "slideBottom", repeat: "once", duration: "1200ms", delay: "0ms", intensity: "30px", starting_opacity: "0%" },
+  { style: "fade", repeat: "once", duration: "1200ms", delay: "150ms", intensity: "20px", starting_opacity: "0%" },
+  {
+    style: "slideBottom",
+    repeat: "once",
+    duration: "1200ms",
+    delay: "300ms",
+    intensity: "30px",
+    starting_opacity: "0%",
+  },
+  { style: "fade", repeat: "once", duration: "1200ms", delay: "450ms", intensity: "20px", starting_opacity: "0%" },
+  {
+    style: "slideBottom",
+    repeat: "once",
+    duration: "1200ms",
+    delay: "600ms",
+    intensity: "30px",
+    starting_opacity: "0%",
+  },
+  { style: "fade", repeat: "once", duration: "1200ms", delay: "750ms", intensity: "20px", starting_opacity: "0%" },
+  {
+    style: "slideBottom",
+    repeat: "once",
+    duration: "1200ms",
+    delay: "900ms",
+    intensity: "30px",
+    starting_opacity: "0%",
+  },
+  { style: "fade", repeat: "once", duration: "1200ms", delay: "1050ms", intensity: "20px", starting_opacity: "0%" },
+  {
+    style: "slideBottom",
+    repeat: "once",
+    duration: "1200ms",
+    delay: "1200ms",
+    intensity: "30px",
+    starting_opacity: "0%",
+  },
+]
 
 const timelineData = [
   {
@@ -8,7 +51,7 @@ const timelineData = [
     company: "Voyage personnel",
     location: "Côte Est, Chine",
     description:
-      "Il s'agit là de mon tout premier voyage, pas encore majeur mais déjà avec un soif d'aller découvrir le monde et ses habitants. C'est deux mois passé à partager le quotidien d'une famille chinoise n'ont éclairé sur le fait que nous avons tous à apprendre des autres cultures.",
+      "Il s'agit là de mon tout premier voyage, pas encore majeur mais déjà avec une soif d'aller découvrir le monde et ses habitants. Ces deux mois passé à partager le quotidien d'une famille chinoise n'ont éclairé sur le fait que nous avons tous à apprendre des autres cultures.",
     achievements: ["Aventure"],
   },
   {
@@ -101,9 +144,39 @@ const timelineData = [
 ]
 
 export function TimelineSection() {
+  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set())
+  const [animatedItems, setAnimatedItems] = useState<Set<number>>(new Set())
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([])
+  const reversedTimelineData = [...timelineData].reverse()
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number.parseInt(entry.target.getAttribute("data-index") || "0")
+            if (!animatedItems.has(index)) {
+              setVisibleItems((prev) => new Set([...prev, index]))
+              setAnimatedItems((prev) => new Set([...prev, index]))
+              observer.unobserve(entry.target)
+            }
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: "100px" },
+    )
+
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
+
+    return () => observer.disconnect()
+  }, [animatedItems])
+
   return (
     <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-pink-50 to-purple-50">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto" ref={sectionRef}>
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-slate-800">
@@ -118,70 +191,92 @@ export function TimelineSection() {
         <div className="relative">
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-400 to-purple-500 h-full rounded-full shadow-lg"></div>
 
-          {timelineData.map((item, index) => (
-            <div key={item.id} className="relative mb-8 sm:mb-12 md:mb-16 last:mb-0">
-              <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 top-6 md:top-0 w-4 h-4 md:w-6 md:h-6 bg-white border-2 md:border-4 border-blue-400 rounded-full shadow-lg z-10 flex items-center justify-center">
-                <div className="w-1 h-1 md:w-2 md:h-2 bg-blue-400 rounded-full"></div>
-              </div>
+          {reversedTimelineData.map((item, index) => {
+            const animConfig = animationData[index % animationData.length]
+            const isVisible = visibleItems.has(index)
 
-              <div className={`md:flex md:items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                {/* Icon section */}
+            const animationStyle = {
+              opacity: isVisible ? "1" : animConfig.starting_opacity,
+              transform: isVisible
+                ? "translateY(0) translateX(0) scale(1)"
+                : animConfig.style === "slideBottom"
+                  ? `translateY(${animConfig.intensity}) scale(0.95)`
+                  : "translateY(0) scale(0.95)",
+              transition: isVisible
+                ? `all ${animConfig.duration} cubic-bezier(0.4, 0, 0.2, 1) ${animConfig.delay}`
+                : "none",
+            }
+
+            return (
+              <div
+                key={item.id}
+                className="relative mb-8 sm:mb-12 md:mb-16 last:mb-0"
+                ref={(el) => (itemRefs.current[index] = el)}
+                data-index={index}
+                style={animationStyle}
+              >
                 <div
-                  className={`w-full md:w-1/2 mb-4 md:mb-0 pl-12 md:pl-0 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}
+                  className={`md:flex md:items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                  style={{ willChange: isVisible ? "auto" : "transform, opacity" }}
                 >
-                  <div className={`md:${index % 2 === 0 ? "text-right" : "text-left"}`}>
-                    <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-200">
-                      <Camera className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 text-blue-500" />
+                  {/* Icon section */}
+                  <div
+                    className={`w-full md:w-1/2 mb-4 md:mb-0 pl-12 md:pl-0 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}
+                  >
+                    <div className={`md:${index % 2 === 0 ? "text-right" : "text-left"}`}>
+                      <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-200">
+                        <Camera className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 text-blue-500" />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Content section */}
-                <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${index % 2 === 0 ? "md:pl-12" : "md:pr-12"}`}>
-                  <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 hover:shadow-2xl transition-all duration-300 border border-slate-100">
-                    {/* Badge année */}
-                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
-                      <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
-                      {item.year}
-                    </div>
+                  {/* Content section */}
+                  <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${index % 2 === 0 ? "md:pl-12" : "md:pr-12"}`}>
+                    <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 hover:shadow-2xl transition-all duration-300 border border-slate-100">
+                      {/* Badge année */}
+                      <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
+                        <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                        {item.year}
+                      </div>
 
-                    {/* Titre et entreprise */}
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 mb-2">{item.title}</h3>
-                    <div className="flex items-center gap-2 text-blue-600 font-semibold mb-2 text-sm sm:text-base">
-                      <Award className="w-3 h-3 sm:w-4 sm:h-4" />
-                      {item.company}
-                    </div>
-                    <div className="flex items-center gap-2 text-slate-500 text-xs sm:text-sm mb-3 sm:mb-4">
-                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
-                      {item.location}
-                    </div>
+                      {/* Titre et entreprise */}
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 mb-2">{item.title}</h3>
+                      <div className="flex items-center gap-2 text-blue-600 font-semibold mb-2 text-sm sm:text-base">
+                        <Award className="w-3 h-3 sm:w-4 sm:h-4" />
+                        {item.company}
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-500 text-xs sm:text-sm mb-3 sm:mb-4">
+                        <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
+                        {item.location}
+                      </div>
 
-                    {/* Description */}
-                    <div className="text-slate-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                      {item.description}
-                    </div>
+                      {/* Description */}
+                      <div className="text-slate-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+                        {item.description}
+                      </div>
 
-                    {/* Réalisations */}
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-slate-700 text-xs sm:text-sm uppercase tracking-wide">
-                        Réalisations clés
-                      </h4>
-                      <div className="flex flex-wrap gap-1 sm:gap-2">
-                        {item.achievements.map((achievement, i) => (
-                          <span
-                            key={i}
-                            className="bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs font-medium border border-blue-100"
-                          >
-                            {achievement}
-                          </span>
-                        ))}
+                      {/* Réalisations */}
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-slate-700 text-xs sm:text-sm uppercase tracking-wide">
+                          Réalisations clés
+                        </h4>
+                        <div className="flex flex-wrap gap-1 sm:gap-2">
+                          {item.achievements.map((achievement, i) => (
+                            <span
+                              key={i}
+                              className="bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs font-medium border border-blue-100"
+                            >
+                              {achievement}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
