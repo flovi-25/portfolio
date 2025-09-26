@@ -13,8 +13,8 @@ export function Header() {
   const { t } = useLanguage()
 
   return (
-    <header className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-pink-50 to-purple-50">
-      <div className="max-w-7xl mx-auto relative flex items-center justify-center">
+    <header className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-pink-50 to-purple-50 ">
+      <div className="max-w-7xl mx-auto relative flex items-center justify-center mt-3 mb-25 sm:mb-15">
         <div className="absolute left-0 z-50">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -33,15 +33,15 @@ export function Header() {
               className="w-48 mt-2 bg-white/95 backdrop-blur-md border border-white/20 shadow-lg"
               sideOffset={8}
             >
-              <DropdownMenuItem asChild>
-                <Link href="/about" className="flex items-center">
-                  <User className="w-4 h-4 mr-2" />
-                  {t("about")}
-                </Link>
-              </DropdownMenuItem>
+            
               <DropdownMenuItem>
                 <FileText className="w-4 h-4 mr-2" />
                 {t("cv_fr")}
+                <a href="florence-viprey-cv-2025.pdf" download="Florence VIPREY cv 2025.pdf" class="btn-download">
+    <span>📄</span> Télécharger mon CV
+  </a>
+
+                
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Linkedin className="w-4 h-4 mr-2" />
@@ -58,8 +58,10 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-
+        
+        <div className="absolute center z-50 mt-25 sm:mt-1">
         <Logo />
+        </div>
 
         <div className="absolute right-0 z-50">
           <LanguageSelector />
