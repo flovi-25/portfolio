@@ -37,7 +37,7 @@ export function Header() {
               <DropdownMenuItem>
                 <FileText className="w-4 h-4 mr-2" />
                 {t("cv_fr")}
-                <a href="florence-viprey-cv-2025.pdf" download="Florence VIPREY cv 2025.pdf" class="btn-download">
+                <a href="florence-viprey-cv-2025.pdf" download="Florence VIPREY cv 2025.pdf" className="btn-download">
     <span>📄</span> Télécharger mon CV
   </a>
 
