@@ -1,11 +1,17 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { FileText, Mail, Menu, User } from "lucide-react"
 import { Linkedin, Instagram } from "lucide-react"
 import Link from "next/link"
 import { Logo } from "@/components/logo"
+import { LanguageSelector } from "@/components/language-selector"
+import { useLanguage } from "@/hooks/use-language"
 
 export function Header() {
+  const { t } = useLanguage()
+
   return (
     <header className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-pink-50 to-purple-50">
       <div className="max-w-7xl mx-auto relative flex items-center justify-center">
@@ -18,7 +24,7 @@ export function Header() {
                 className="text-foreground hover:text-accent bg-white/80 backdrop-blur-sm border border-white/20 shadow-sm"
               >
                 <Menu className="w-5 h-5 mr-2" />
-                <span className="hidden sm:inline">Menu</span>
+                <span className="hidden sm:inline">{t("menu")}</span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
@@ -29,30 +35,35 @@ export function Header() {
             >
               <DropdownMenuItem asChild>
                 <Link href="/about" className="flex items-center">
-                  <User className="w-4 h-4 mr-2" />À propos
+                  <User className="w-4 h-4 mr-2" />
+                  {t("about")}
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <FileText className="w-4 h-4 mr-2" />
-                CV en FR
+                {t("cv_fr")}
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Linkedin className="w-4 h-4 mr-2" />
-                LinkedIn
+                {t("linkedin")}
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Instagram className="w-4 h-4 mr-2" />
-                Instagram
+                {t("instagram")}
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Mail className="w-4 h-4 mr-2" />
-                CONTACT
+                {t("contact")}
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
 
         <Logo />
+
+        <div className="absolute right-0 z-50">
+          <LanguageSelector />
+        </div>
       </div>
     </header>
   )

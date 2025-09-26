@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Clock, Users, ChefHat, Heart, Share2, Utensils, Flame, Camera } from "lucide-react"
+import { useLanguage } from "@/hooks/use-language"
 
 const recipeData = {
   title: "Coques de Macarons",
@@ -83,9 +84,74 @@ const recipeData = {
 }
 
 export function RecetteSection() {
+  const { t } = useLanguage()
   const [activeStep, setActiveStep] = useState(0)
   const [isFavorite, setIsFavorite] = useState(false)
   const [checkedIngredients, setCheckedIngredients] = useState(new Set())
+  const [screenWakeLock, setScreenWakeLock] = useState(true)
+  const wakeLockRef = useRef(null)
+  const timeoutRef = useRef(null)
+
+  useEffect(() => {
+    const savedFavorite = localStorage.getItem("recipe-favorite")
+    if (savedFavorite !== null) {
+      setIsFavorite(JSON.parse(savedFavorite))
+    }
+  }, [])
+
+  const toggleFavorite = () => {
+    const newFavoriteState = !isFavorite
+    setIsFavorite(newFavoriteState)
+    localStorage.setItem("recipe-favorite", JSON.stringify(newFavoriteState))
+  }
+
+  useEffect(() => {
+    const requestWakeLock = async () => {
+      if (screenWakeLock && "wakeLock" in navigator) {
+        try {
+          wakeLockRef.current = await navigator.wakeLock.request("screen")
+          console.log("[v0] Screen wake lock activated")
+
+          // Set timeout for 10 minutes
+          timeoutRef.current = setTimeout(
+            () => {
+              if (wakeLockRef.current) {
+                wakeLockRef.current.release()
+                wakeLockRef.current = null
+                console.log("[v0] Screen wake lock released after 10 minutes")
+              }
+            },
+            10 * 60 * 1000,
+          ) // 10 minutes
+        } catch (err) {
+          console.log("[v0] Failed to activate screen wake lock:", err)
+        }
+      }
+    }
+
+    const releaseWakeLock = () => {
+      if (wakeLockRef.current) {
+        wakeLockRef.current.release()
+        wakeLockRef.current = null
+        console.log("[v0] Screen wake lock released")
+      }
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+        timeoutRef.current = null
+      }
+    }
+
+    if (screenWakeLock) {
+      requestWakeLock()
+    } else {
+      releaseWakeLock()
+    }
+
+    // Cleanup on unmount
+    return () => {
+      releaseWakeLock()
+    }
+  }, [screenWakeLock])
 
   const toggleIngredient = (categoryIndex, itemIndex) => {
     const key = `${categoryIndex}-${itemIndex}`
@@ -103,7 +169,7 @@ export function RecetteSection() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-slate-800">Bonus</h2>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-slate-800">{t("recipe_bonus")}</h2>
         </div>
 
         {/* Header de la recette */}
@@ -120,12 +186,12 @@ export function RecetteSection() {
             <div className="md:w-3/5 p-8">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h1 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-3">{recipeData.title}</h1>
-                  <p className="text-gray-600 leading-relaxed mb-4">{recipeData.description}</p>
+                  <h1 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-3">{t("recipe_title")}</h1>
+                  <p className="text-gray-600 leading-relaxed mb-4">{t("recipe_description")}</p>
                 </div>
                 <div className="flex gap-2">
                   <button
-                    onClick={() => setIsFavorite(!isFavorite)}
+                    onClick={toggleFavorite}
                     className={`p-2 rounded-full transition-colors ${isFavorite ? "bg-red-100 text-red-500" : "bg-gray-100 text-gray-500"}`}
                   >
                     <Heart className="w-5 h-5" fill={isFavorite ? "currentColor" : "none"} />
@@ -141,17 +207,17 @@ export function RecetteSection() {
                 <div className="text-center p-3 bg-purple-50 rounded-xl">
                   <Clock className="w-5 h-5 text-purple-500 mx-auto mb-1" />
                   <div className="text-sm font-semibold text-gray-700">{recipeData.totalTime}</div>
-                  <div className="text-xs text-gray-500">Total</div>
+                  <div className="text-xs text-gray-500">{t("total")}</div>
                 </div>
                 <div className="text-center p-3 bg-blue-50 rounded-xl">
                   <Users className="w-5 h-5 text-blue-500 mx-auto mb-1" />
                   <div className="text-sm font-semibold text-gray-700">{recipeData.servings}</div>
-                  <div className="text-xs text-gray-500">Personnes</div>
+                  <div className="text-xs text-gray-500">{t("people")}</div>
                 </div>
                 <div className="text-center p-3 bg-green-50 rounded-xl">
                   <Flame className="w-5 h-5 text-green-500 mx-auto mb-1" />
                   <div className="text-sm font-semibold text-gray-700">{recipeData.difficulty}</div>
-                  <div className="text-xs text-gray-500">Difficulté</div>
+                  <div className="text-xs text-gray-500">{t("difficulty")}</div>
                 </div>
               </div>
             </div>
@@ -164,7 +230,7 @@ export function RecetteSection() {
             <div className="bg-white rounded-2xl shadow-xl p-6 sticky top-6">
               <div className="flex items-center gap-2 mb-6">
                 <Utensils className="w-5 h-5 text-purple-500" />
-                <h2 className="text-xl font-bold text-gray-800">Ingrédients</h2>
+                <h2 className="text-xl font-bold text-gray-800">{t("ingredients")}</h2>
               </div>
 
               {recipeData.ingredients.map((category, categoryIndex) => (
@@ -202,10 +268,38 @@ export function RecetteSection() {
           {/* Instructions */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-xl p-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                <ChefHat className="w-5 h-5 text-purple-500" />
-                Instructions
-              </h2>
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                  <ChefHat className="w-5 h-5 text-purple-500" />
+                  {t("instructions")}
+                </h2>
+                <div className="flex items-center gap-3">
+                  <label htmlFor="screen-wake-lock" className="text-sm font-medium text-gray-700">
+                    {t("maintain_screen_on")}
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      id="screen-wake-lock"
+                      checked={screenWakeLock}
+                      onChange={(e) => setScreenWakeLock(e.target.checked)}
+                      className="sr-only"
+                    />
+                    <div
+                      className={`w-11 h-6 rounded-full transition-colors cursor-pointer ${
+                        screenWakeLock ? "bg-purple-500" : "bg-gray-300"
+                      }`}
+                      onClick={() => setScreenWakeLock(!screenWakeLock)}
+                    >
+                      <div
+                        className={`w-4 h-4 bg-white rounded-full shadow-md transform transition-transform ${
+                          screenWakeLock ? "translate-x-6" : "translate-x-1"
+                        } mt-1`}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div className="space-y-6">
                 {recipeData.instructions.map((instruction, index) => (
