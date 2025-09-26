@@ -2,9 +2,8 @@
 
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { FileText, Mail, Menu, User } from "lucide-react"
+import { FileText, Mail, Menu } from "lucide-react"
 import { Linkedin, Instagram } from "lucide-react"
-import Link from "next/link"
 import { Logo } from "@/components/logo"
 import { LanguageSelector } from "@/components/language-selector"
 import { useLanguage } from "@/hooks/use-language"
@@ -33,15 +32,16 @@ export function Header() {
               className="w-48 mt-2 bg-white/95 backdrop-blur-md border border-white/20 shadow-lg"
               sideOffset={8}
             >
-            
               <DropdownMenuItem>
                 <FileText className="w-4 h-4 mr-2" />
-                {t("cv_fr")}
-                <a href="florence-viprey-cv-2025.pdf" download="Florence VIPREY cv 2025.pdf" className="btn-download">
-    <span>📄</span> Télécharger mon CV
-  </a>
-
-                
+                <a
+                  href="/florence-viprey-cv-2025.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center w-full text-left hover:text-accent-foreground"
+                >
+                  {t("cv_fr")}
+                </a>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Linkedin className="w-4 h-4 mr-2" />
@@ -58,9 +58,9 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        
+
         <div className="absolute center z-50 mt-25 sm:mt-1">
-        <Logo />
+          <Logo />
         </div>
 
         <div className="absolute right-0 z-50">
