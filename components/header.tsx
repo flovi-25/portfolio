@@ -35,11 +35,12 @@ export function Header() {
               <DropdownMenuItem>
                 <FileText className="w-4 h-4 mr-2" />
                 <a
-                  href="/https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Florence%20VIPREY%20cv%202025-QUsSttCjhafbUJBksdsVuuK3wUhD0C.pdf"
+                  href="Florence VIPREY cv 2025.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center w-full text-left hover:text-accent-foreground"
                 >
-                  {t("Télécharger mon CV en fr")}
+                  {t("cv_fr")}
                 </a>
               </DropdownMenuItem>
               <DropdownMenuItem>
