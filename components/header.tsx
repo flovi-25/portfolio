@@ -1,59 +1,66 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { FileText, Mail, Menu } from "lucide-react"
 import { Linkedin, Instagram } from "lucide-react"
 import { Logo } from "@/components/logo"
 import { LanguageSelector } from "@/components/language-selector"
 import { useLanguage } from "@/hooks/use-language"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export function Header() {
   const { t } = useLanguage()
 
   return (
-    <header className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-pink-50 to-purple-50 ">
+    <header className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-br from-pink-50 to-purple-50">
       <div className="max-w-7xl mx-auto relative flex items-center justify-center mt-3 mb-25 sm:mb-15">
         <div className="absolute left-0 z-50">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-foreground hover:text-accent bg-white/80 backdrop-blur-sm border border-white/20 shadow-sm"
-              >
-                <Menu className="w-5 h-5 mr-2" />
-                <span className="hidden sm:inline">{t("menu")}</span>
+              <Button variant="ghost" size="sm" className="flex items-center gap-2">
+                <Menu className="h-4 w-4" />
+                Menu
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent
-              align="start"
-              side="bottom"
-              className="w-48 mt-2 bg-white/95 backdrop-blur-md border border-white/20 shadow-lg"
-              sideOffset={8}
-            >
-              <DropdownMenuItem>
-                <FileText className="w-4 h-4 mr-2" />
+            <DropdownMenuContent align="start">
+              <DropdownMenuItem asChild>
                 <a
-                  href="Florence VIPREY cv 2025.pdf"
+                  href="/florence-viprey-cv-2025.html"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center w-full text-left hover:text-accent-foreground"
+                  className="flex items-center gap-2"
+                  rel="noreferrer"
                 >
-                  {t("cv_fr")}
+                  <FileText className="h-4 w-4" />
+                  {t("openCV")}
                 </a>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Linkedin className="w-4 h-4 mr-2" />
-                {t("linkedin")}
+              <DropdownMenuItem asChild>
+                <a
+                  href="http://www.linkedin.com/in/florence-viprey-ba490893"
+                  target="_blank"
+                  className="flex items-center gap-2"
+                  rel="noreferrer"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  LinkedIn
+                </a>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Instagram className="w-4 h-4 mr-2" />
-                {t("instagram")}
+              <DropdownMenuItem asChild>
+                <a
+                  href="https://www.instagram.com/florences_challenges/"
+                  target="_blank"
+                  className="flex items-center gap-2"
+                  rel="noreferrer"
+                >
+                  <Instagram className="h-4 w-4" />
+                  Instagram
+                </a>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Mail className="w-4 h-4 mr-2" />
-                {t("contact")}
+              <DropdownMenuItem asChild>
+                <a href="mailto:viprey.florence@gmail.com" className="flex items-center gap-2">
+                  <Mail className="h-4 w-4" />
+                  Contact
+                </a>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
