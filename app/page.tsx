@@ -12,6 +12,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+    
       <main className="flex flex-col">
         <HeroSection />
         <AboutSection />

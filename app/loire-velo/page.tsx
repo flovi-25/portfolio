@@ -1,4 +1,4 @@
-import { ArrowLeft } from "heroicons-react"
+import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -31,8 +31,8 @@ export default function LoireVeloPage() {
       <section className="py-16 relative overflow-hidden">
         {/* Background image placeholder - will be added later */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-green-600/20"></div>
-
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div style={{opacity:0.5}} className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 sm:p-12 shadow-xl">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Un Parcours Exceptionnel</h2>
             <div className="prose prose-lg max-w-none text-gray-700">
