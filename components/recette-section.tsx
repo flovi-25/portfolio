@@ -356,7 +356,7 @@ export function RecetteSection() {
 													<h3 className="font-semibold text-gray-800">
 														{instruction.title}
 													</h3>
-													<span className="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-500">
+													<span className="shrink-0 rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-500">
 														{instruction.time}
 													</span>
 												</div>
