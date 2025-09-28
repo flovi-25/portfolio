@@ -1,8 +1,9 @@
 "use client";
 
-import { Calendar, MapPin, Award } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
+import { Award, Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 const animationData = [
 	{
@@ -289,7 +290,10 @@ export function TimelineSection() {
 										className={`mb-4 w-full pl-12 md:mb-0 md:w-1/2 md:pl-0 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}
 									>
 										<div
-											className={`md:${index % 2 === 0 ? "text-right" : "text-left"}`}
+											className={cn(
+												"text-center",
+												index % 2 === 0 ? "md:text-right" : "md:text-left",
+											)}
 										>
 											<div className="inline-flex h-50 w-50 items-center justify-center overflow-hidden rounded-2xl border border-blue-200 bg-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl sm:h-70 sm:w-70 md:h-90 md:w-90">
 												<Image
@@ -297,8 +301,8 @@ export function TimelineSection() {
 														timelineImages[item.id] || "/images/placeholder.jpg"
 													}
 													alt={`${item.title} - ${item.company}`}
-													width={128}
-													height={128}
+													width={360}
+													height={360}
 													className="h-full w-full object-cover"
 												/>
 											</div>
