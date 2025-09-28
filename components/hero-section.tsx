@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useLanguage } from "@/hooks/use-language";
+import Image from "next/image";
 
 export function HeroSection() {
 	const { t } = useLanguage();
@@ -15,6 +15,7 @@ export function HeroSection() {
 						alt="fv"
 						className="object-cover opacity-50"
 						priority
+						fill
 					/>
 				</div>
 				{/* Dark overlay for better text readability */}
