@@ -119,6 +119,7 @@ export function RecipeSection() {
 							if (wakeLockRef.current) {
 								wakeLockRef.current.release();
 								wakeLockRef.current = null;
+								setScreenWakeLock(false);
 								console.log("Screen wake lock released after 10 minutes");
 							}
 						},
