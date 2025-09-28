@@ -1,11 +1,12 @@
 "use client";
 
-import { ArrowLeft, X } from "lucide-react";
-import Link from "next/link";
-import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { Card } from "@/components/ui/card";
-import { useState, useEffect } from "react";
+import { ArrowLeft, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function ConcoursPage() {
 	const [selectedRecipe, setSelectedRecipe] = useState<number | null>(null);
@@ -40,20 +41,20 @@ export default function ConcoursPage() {
 	const recipes = [
 		{
 			title: "Publication d'une recette",
-			image: "/livre-cake-show.jpg",
+			image: "/images/livre-cake-show.jpg",
 			description:
 				"Publication d'une recette dans le livre Le Cake Show de Sophie. Livre de recette paru en 2006 suite à une sélection par Sophie Dudemaine de 80 recettes inédites parmi des milliers de propositions de ces précédents lecteurs.",
-			liens: "Vers le livre: ici",
+			liens: "Vers le livre : ici",
 		},
 		{
 			title: "Seconde place à un concours régional de cuisine",
-			image: "/est-republicain.jpg",
+			image: "/images/est-republicain.jpg",
 			description: "2007 : organisé par le journal local.",
 			liens: "",
 		},
 		{
 			title: "Premier prix au concours interne ESIAB Mon projet en 180'S ",
-			image: "/dessert-magique.png",
+			image: "/images/dessert-magique.png",
 			description:
 				"2015 : il s'agit d'une crème dessert ludique pouvant changer de goût et de couleur en fonction de la volonté du consommateur.",
 			liens: " ",
@@ -61,7 +62,7 @@ export default function ConcoursPage() {
 		{
 			title:
 				"Prix spécial du jury lors de la 10ème édition du Trophée Louis Pasteur",
-			image: "/louis-pasteur.jpg",
+			image: "/images/louis-pasteur.jpg",
 			description:
 				"2015 : Notre récompense : passer une journée en compagnie du parrain du concours : Hervé THIS le célèbre chimiste de l’INRA à l’origine de la Gastronomie moléculaire. ",
 			liens: "Communiqué de presse <br /> Article Capital n288 2015 page 20",
@@ -116,10 +117,11 @@ export default function ConcoursPage() {
 							>
 								<div className="relative overflow-hidden">
 									<div className="aspect-[4/5] overflow-hidden">
-										<img
+										<Image
+											className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
 											src={recipe.image || "/placeholder.svg"}
 											alt={recipe.title}
-											className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+											fill
 										/>
 									</div>
 									<div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent p-4 transition-all duration-300 group-hover:from-black/90">
@@ -157,9 +159,9 @@ export default function ConcoursPage() {
 
 								<div className="mb-4">
 									<img
+										className="h-64 w-full rounded-lg object-cover transition-transform duration-300 hover:scale-105"
 										src={recipes[selectedRecipe].image || "/placeholder.svg"}
 										alt={recipes[selectedRecipe].title}
-										className="h-64 w-full rounded-lg object-cover transition-transform duration-300 hover:scale-105"
 									/>
 								</div>
 

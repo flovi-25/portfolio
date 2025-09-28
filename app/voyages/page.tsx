@@ -28,7 +28,8 @@ export default function VoyagesPage() {
 					<div className="mb-8">
 						<div className="mx-auto flex h-32 w-full max-w-2xl items-center justify-center border-2 border-gray-300 bg-gray-50">
 							<Image
-								src="/carte-monde.png"
+								src="/images/carte-monde.png"
+								alt="Carte du monde"
 								width={800}
 								height={400}
 								className="h-full w-full object-cover"

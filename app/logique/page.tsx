@@ -1,9 +1,9 @@
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
-import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { Card } from "@/components/ui/card";
+import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function LogiquePage() {
 	return (
@@ -61,7 +61,7 @@ export default function LogiquePage() {
 						<Card className="group overflow-hidden border-0 shadow-lg transition-all duration-300 hover:shadow-xl">
 							<div className="relative aspect-[4/3] overflow-hidden">
 								<Image
-									src="/100-logique-fv.png"
+									src="/images/100-logique-cf.jpg"
 									alt="100% Logique - Médaille de bronze"
 									fill
 									className="object-cover transition-transform duration-300 group-hover:scale-105"

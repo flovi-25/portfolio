@@ -1,8 +1,8 @@
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
-import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function LoireVeloPage() {
 	return (
@@ -38,9 +38,10 @@ export default function LoireVeloPage() {
 						{/* Background Image with xx% opacity */}
 						<div className="absolute inset-0">
 							<Image
+								className="h-full w-full object-cover opacity-70"
 								src="/images/velo.jpg"
 								alt="Vélo avec sa remorque et notre tente de camping lors de notre voyage Loire à vélo"
-								className="h-full w-full object-cover opacity-70"
+								fill
 							/>
 							{/* Dark overlay for better text readability */}
 							<div className="absolute inset-0 bg-black/20"></div>

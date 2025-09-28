@@ -2,12 +2,13 @@
 
 import type React from "react";
 
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { Card } from "@/components/ui/card";
-import { useState, useRef } from "react";
+import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRef, useState } from "react";
 
 export default function LogiquePage() {
 	const [currentSlide, setCurrentSlide] = useState(0);
@@ -184,10 +185,11 @@ export default function LogiquePage() {
 						>
 							<Card className="border-0 shadow-lg">
 								<div className="relative aspect-[4/3]">
-									<img
-										src={currentSlide.image}
-										alt={currentSlide.title}
+									<Image
 										className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+										src={images[currentSlide].image}
+										alt={images[currentSlide].title}
+										fill
 									/>
 								</div>
 							</Card>
