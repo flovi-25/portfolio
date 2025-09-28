@@ -37,7 +37,7 @@ export function Header() {
 									href="/florence-viprey-cv-2025.html"
 									target="_blank"
 									className="flex items-center gap-2"
-									rel="noreferrer"
+									rel="noreferrer nofollow"
 								>
 									<FileText className="h-4 w-4" />
 									{t("Ouvrir mon CV")}
@@ -48,7 +48,7 @@ export function Header() {
 									href="http://www.linkedin.com/in/florence-viprey-ba490893"
 									target="_blank"
 									className="flex items-center gap-2"
-									rel="noreferrer"
+									rel="noreferrer nofollow"
 								>
 									<Linkedin className="h-4 w-4" />
 									LinkedIn
@@ -59,7 +59,7 @@ export function Header() {
 									href="https://www.instagram.com/florences_challenges/"
 									target="_blank"
 									className="flex items-center gap-2"
-									rel="noreferrer"
+									rel="noreferrer nofollow"
 								>
 									<Instagram className="h-4 w-4" />
 									Instagram
@@ -69,6 +69,7 @@ export function Header() {
 								<a
 									href="mailto:viprey.florence@gmail.com"
 									className="flex items-center gap-2"
+									rel="noreferrer nofollow"
 								>
 									<Mail className="h-4 w-4" />
 									Contact
