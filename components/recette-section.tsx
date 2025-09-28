@@ -1,5 +1,10 @@
 "use client";
 
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { useLanguage } from "@/hooks/use-language";
 import { ChefHat, Clock, Flame, Share2, Users, Utensils } from "lucide-react";
 import Image from "next/image";
@@ -94,6 +99,14 @@ export function RecetteSection() {
 	const wakeLockRef = useRef<WakeLockSentinel>(null);
 	const timeoutRef = useRef<NodeJS.Timeout>(null);
 
+	const titleId = "recette-coques-macarons";
+	const shareLink = useRef<string>("");
+	const [showShareSuccess, setShowShareSuccess] = useState<boolean>(false);
+
+	useEffect(() => {
+		shareLink.current = `https://${location.host}/${titleId}`;
+	}, []);
+
 	useEffect(() => {
 		const requestWakeLock = async () => {
 			if (screenWakeLock && "wakeLock" in navigator) {
@@ -169,7 +182,10 @@ export function RecetteSection() {
 					<div className="p-8 md:w-3/5">
 						<div className="mb-4 flex items-start justify-between">
 							<div>
-								<h1 className="mb-3 font-serif text-3xl font-bold text-gray-800 md:text-4xl">
+								<h1
+									id={titleId}
+									className="mb-3 font-serif text-3xl font-bold text-gray-800 md:text-4xl"
+								>
 									{t("recipe_title")}
 								</h1>
 								<p className="mb-4 leading-relaxed text-gray-600">
@@ -177,9 +193,31 @@ export function RecetteSection() {
 								</p>
 							</div>
 							<div className="flex gap-2">
-								<button className="rounded-full bg-gray-100 p-2 text-gray-500 transition-colors hover:bg-gray-200">
-									<Share2 className="h-5 w-5" />
-								</button>
+								<Tooltip>
+									<TooltipTrigger asChild>
+										<button
+											className="rounded-full bg-gray-100 p-2 text-gray-500 transition-colors hover:bg-gray-200"
+											onClick={() => {
+												if (navigator.share) {
+													navigator.share({
+														title: "Coques de Macarons",
+														text: "La recette signature de Florence Viprey\n",
+														url: shareLink.current,
+													});
+												} else if (navigator.clipboard) {
+													navigator.clipboard.writeText(
+														`Coques de Macarons, la recette signature de Florence Viprey :\n${shareLink.current}`,
+													);
+												}
+											}}
+										>
+											<Share2 className="h-5 w-5" />
+										</button>
+									</TooltipTrigger>
+									<TooltipContent className="hidden md:block">
+										Copier dans le presse-papier
+									</TooltipContent>
+								</Tooltip>
 							</div>
 						</div>
 
