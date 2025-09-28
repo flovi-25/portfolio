@@ -1,15 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/hooks/use-language";
-import {
-	ChefHat,
-	Clock,
-	Flame,
-	Heart,
-	Share2,
-	Users,
-	Utensils,
-} from "lucide-react";
+import { ChefHat, Clock, Flame, Share2, Users, Utensils } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Label } from "./ui/label";
@@ -97,24 +89,10 @@ const recipeData = {
 export function RecetteSection() {
 	const { t } = useLanguage();
 	const [activeStep, setActiveStep] = useState(0);
-	const [isFavorite, setIsFavorite] = useState(false);
 	const [checkedIngredients, setCheckedIngredients] = useState(new Set());
 	const [screenWakeLock, setScreenWakeLock] = useState(false);
 	const wakeLockRef = useRef<WakeLockSentinel>(null);
 	const timeoutRef = useRef<NodeJS.Timeout>(null);
-
-	useEffect(() => {
-		const savedFavorite = localStorage.getItem("recipe-favorite");
-		if (savedFavorite !== null) {
-			setIsFavorite(JSON.parse(savedFavorite));
-		}
-	}, []);
-
-	const toggleFavorite = () => {
-		const newFavoriteState = !isFavorite;
-		setIsFavorite(newFavoriteState);
-		localStorage.setItem("recipe-favorite", JSON.stringify(newFavoriteState));
-	};
 
 	useEffect(() => {
 		const requestWakeLock = async () => {
@@ -199,15 +177,6 @@ export function RecetteSection() {
 								</p>
 							</div>
 							<div className="flex gap-2">
-								<button
-									onClick={toggleFavorite}
-									className={`rounded-full p-2 transition-colors ${isFavorite ? "bg-red-100 text-red-500" : "bg-gray-100 text-gray-500"}`}
-								>
-									<Heart
-										className="h-5 w-5"
-										fill={isFavorite ? "currentColor" : "none"}
-									/>
-								</button>
 								<button className="rounded-full bg-gray-100 p-2 text-gray-500 transition-colors hover:bg-gray-200">
 									<Share2 className="h-5 w-5" />
 								</button>
