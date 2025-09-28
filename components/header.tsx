@@ -33,7 +33,7 @@ export function Header() {
 						<DropdownMenuContent align="start">
 							<DropdownMenuItem asChild>
 								<a
-									href="/florence-viprey-cv-2025.html"
+									href="/Florence VIPREY cv 2025.pdf"
 									target="_blank"
 									className="flex items-center gap-2"
 									rel="noreferrer nofollow"
