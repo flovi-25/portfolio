@@ -7,8 +7,8 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Languages } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
+import { Languages } from "lucide-react";
 
 export function LanguageSelector() {
 	const { language, setLanguage, t } = useLanguage();
@@ -19,7 +19,7 @@ export function LanguageSelector() {
 				<Button
 					variant="ghost"
 					size="sm"
-					className="text-foreground hover:text-accent border border-white/20 bg-white/80 shadow-sm backdrop-blur-sm"
+					className="text-foreground border border-white/20 bg-white/80 shadow-sm backdrop-blur-sm"
 				>
 					<Languages className="mr-2 h-4 w-4" />
 					<span className="text-sm font-medium">{language.toUpperCase()}</span>

@@ -1,17 +1,16 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { FileText, Mail, Menu } from "lucide-react";
-import { Linkedin, Instagram } from "lucide-react";
-import { Logo } from "@/components/logo";
 import { LanguageSelector } from "@/components/language-selector";
-import { useLanguage } from "@/hooks/use-language";
+import { Logo } from "@/components/logo";
+import { Button } from "@/components/ui/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/hooks/use-language";
+import { FileText, Instagram, Linkedin, Mail, Menu } from "lucide-react";
 
 export function Header() {
 	const { t } = useLanguage();
@@ -25,7 +24,7 @@ export function Header() {
 							<Button
 								variant="ghost"
 								size="sm"
-								className="flex items-center gap-2"
+								className="text-foreground border border-white/20 bg-white/80 shadow-sm backdrop-blur-sm"
 							>
 								<Menu className="h-4 w-4" />
 								Menu
