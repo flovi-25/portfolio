@@ -6,37 +6,10 @@ import { Card } from "@/components/ui/card";
 import { ArrowLeft, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function ConcoursPage() {
 	const [selectedRecipe, setSelectedRecipe] = useState<number | null>(null);
-	const [isVisible, setIsVisible] = useState(false);
-	const [visibleCards, setVisibleCards] = useState<boolean[]>([
-		false,
-		false,
-		false,
-		false,
-	]);
-
-	useEffect(() => {
-		setIsVisible(true);
-
-		// Animate cards one by one
-		const timers = visibleCards.map((_, index) =>
-			setTimeout(
-				() => {
-					setVisibleCards((prev) => {
-						const newState = [...prev];
-						newState[index] = true;
-						return newState;
-					});
-				},
-				200 + index * 150,
-			),
-		);
-
-		return () => timers.forEach((timer) => clearTimeout(timer));
-	}, []);
 
 	const recipes = [
 		{
@@ -89,9 +62,7 @@ export default function ConcoursPage() {
 			<main className="py-16 sm:py-20 lg:py-24">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					{/* Title Section */}
-					<div
-						className={`mb-12 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
-					>
+					<div className="mb-12 translate-y-0 text-center opacity-100 transition-all duration-1000">
 						<h1 className="mb-8 font-serif text-4xl font-light tracking-wider text-purple-600 transition-colors duration-300 hover:text-purple-700 sm:text-5xl md:text-6xl">
 							Concours
 						</h1>
@@ -107,11 +78,7 @@ export default function ConcoursPage() {
 						{recipes.map((recipe, index) => (
 							<Card
 								key={index}
-								className={`group transform cursor-pointer overflow-hidden border-0 bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:rotate-1 hover:shadow-2xl ${
-									visibleCards[index] ?
-										"translate-y-0 opacity-100"
-									:	"translate-y-8 opacity-0"
-								}`}
+								className="group translate-y-0 transform cursor-pointer overflow-hidden border-0 bg-white opacity-100 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:rotate-1 hover:shadow-2xl"
 								onClick={() => setSelectedRecipe(index)}
 								style={{ transitionDelay: `${index * 100}ms` }}
 							>
@@ -158,10 +125,12 @@ export default function ConcoursPage() {
 								</div>
 
 								<div className="mb-4">
-									<img
+									<Image
 										className="h-64 w-full rounded-lg object-cover transition-transform duration-300 hover:scale-105"
 										src={recipes[selectedRecipe].image || "/placeholder.svg"}
 										alt={recipes[selectedRecipe].title}
+										width={600}
+										height={600}
 									/>
 								</div>
 

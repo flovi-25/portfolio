@@ -1,11 +1,9 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { useLanguage } from "@/hooks/use-language";
 import Image from "next/image";
 
 export function GallerySection() {
-	const { t } = useLanguage();
 	return (
 		<section className="bg-muted/30 px-4 py-20">
 			<div className="container mx-auto max-w-6xl">

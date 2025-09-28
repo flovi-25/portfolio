@@ -1,15 +1,14 @@
 "use client";
 import { Card } from "@/components/ui/card";
 import {
+	Bike,
 	CakeSlice,
 	Lightbulb,
-	Trophy,
 	Plane,
-	Bike,
 	Scissors,
+	Trophy,
 } from "lucide-react";
 import Link from "next/link";
-import { useLanguage } from "@/hooks/use-language";
 
 const expertiseAreas = [
 	{
@@ -52,8 +51,6 @@ const expertiseAreas = [
 ];
 
 export function ExpertiseSection() {
-	const { t } = useLanguage();
-
 	return (
 		<section className="bg-gradient-to-br from-purple-50 to-pink-50 px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
 			<div className="mx-auto max-w-6xl">

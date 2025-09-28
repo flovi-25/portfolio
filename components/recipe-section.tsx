@@ -91,7 +91,7 @@ const recipeData = {
 	],
 };
 
-export function RecetteSection() {
+export function RecipeSection() {
 	const { t } = useLanguage();
 	const [activeStep, setActiveStep] = useState(0);
 	const [checkedIngredients, setCheckedIngredients] = useState(new Set());
@@ -101,7 +101,6 @@ export function RecetteSection() {
 
 	const titleId = "recette-coques-macarons";
 	const shareLink = useRef<string>("");
-	const [showShareSuccess, setShowShareSuccess] = useState<boolean>(false);
 
 	useEffect(() => {
 		shareLink.current = `https://${location.host}/${titleId}`;

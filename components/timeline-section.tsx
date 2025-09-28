@@ -275,7 +275,9 @@ export function TimelineSection() {
 							<div
 								key={item.id}
 								className="relative mb-8 last:mb-0 sm:mb-12 md:mb-16"
-								ref={(el) => (itemRefs.current[index] = el)}
+								ref={(el) => {
+									itemRefs.current[index] = el;
+								}}
 								data-index={index}
 								style={animationStyle}
 							>

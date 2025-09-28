@@ -6,7 +6,7 @@ import { HeroSection } from "@/components/hero-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { RecetteSection } from "@/components/recette-section";
+import { RecipeSection } from "@/components/recipe-section";
 import { TimelineSection } from "@/components/timeline-section";
 
 export default function Page() {
@@ -18,11 +18,11 @@ export default function Page() {
 				<HeroSection />
 				<AboutSection />
 				<ExpertiseSection />
-
 				<TimelineSection />
-				<RecetteSection />
+				<RecipeSection />
 				<ContactSection />
 			</main>
+
 			<Footer />
 		</div>
 	);

@@ -2,12 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useLanguage } from "@/hooks/use-language";
 import { Instagram, Linkedin, Mail } from "lucide-react";
 
 export function ContactSection() {
-	const { t } = useLanguage();
-
 	return (
 		<section className="bg-gradient-to-br from-pink-50 to-purple-50 px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
 			<div className="mx-auto text-center">
