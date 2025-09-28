@@ -38,7 +38,24 @@ export default function ConcoursPage() {
 			image: "/images/louis-pasteur.jpg",
 			description:
 				"2015 : Notre récompense : passer une journée en compagnie du parrain du concours : Hervé THIS le célèbre chimiste de l’INRA à l’origine de la Gastronomie moléculaire. ",
-			liens: "Communiqué de presse <br /> Article Capital n288 2015 page 20",
+			liens: `<a
+									href="/Communiqué  de presse Trophées  Louis Pasteur Juin2015.pdf"
+									target="_blank"
+									className="flex items-center gap-2"
+									rel="noreferrer nofollow"
+								>
+									<FileText className="h-4 w-4" />
+									Communiqué de presse
+								</a> <br /> <a
+									href="/Capital 288.pdf"
+									target="_blank"
+									className="flex items-center gap-2"
+									rel="noreferrer nofollow"
+								>
+									<FileText className="h-4 w-4" />
+									Article Capital n288 2015 page 20
+								</a>
+							 `,
 		},
 	];
 
