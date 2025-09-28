@@ -1,6 +1,5 @@
 "use client";
 
-import { LanguageSelector } from "@/components/language-selector";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import {
@@ -83,7 +82,7 @@ export function Header() {
 				</div>
 
 				<div className="absolute right-0 z-50">
-					<LanguageSelector />
+					{/* <LanguageSelector /> */}
 				</div>
 			</div>
 		</header>
