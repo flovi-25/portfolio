@@ -1,18 +1,20 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/hooks/use-language";
 import {
-	Clock,
-	Users,
 	ChefHat,
+	Clock,
+	Flame,
 	Heart,
 	Share2,
+	Users,
 	Utensils,
-	Flame,
 } from "lucide-react";
 import Image from "next/image"; // Added missing Image import from Next.js
-import { useLanguage } from "@/hooks/use-language";
-import { Card } from "@/components/ui/card";
+import { useEffect, useRef, useState } from "react";
+import { Label } from "./ui/label";
+import { Switch } from "./ui/switch";
 
 const recipeData = {
 	title: "Coques de Macarons",
@@ -98,9 +100,9 @@ export function RecetteSection() {
 	const [activeStep, setActiveStep] = useState(0);
 	const [isFavorite, setIsFavorite] = useState(false);
 	const [checkedIngredients, setCheckedIngredients] = useState(new Set());
-	const [screenWakeLock, setScreenWakeLock] = useState(true);
-	const wakeLockRef = useRef(null);
-	const timeoutRef = useRef(null);
+	const [screenWakeLock, setScreenWakeLock] = useState(false);
+	const wakeLockRef = useRef<WakeLockSentinel>(null);
+	const timeoutRef = useRef<NodeJS.Timeout>(null);
 
 	useEffect(() => {
 		const savedFavorite = localStorage.getItem("recipe-favorite");
@@ -120,7 +122,7 @@ export function RecetteSection() {
 			if (screenWakeLock && "wakeLock" in navigator) {
 				try {
 					wakeLockRef.current = await navigator.wakeLock.request("screen");
-					console.log("[v0] Screen wake lock activated");
+					console.log("Screen wake lock activated");
 
 					// Set timeout for 10 minutes
 					timeoutRef.current = setTimeout(
@@ -128,13 +130,13 @@ export function RecetteSection() {
 							if (wakeLockRef.current) {
 								wakeLockRef.current.release();
 								wakeLockRef.current = null;
-								console.log("[v0] Screen wake lock released after 10 minutes");
+								console.log("Screen wake lock released after 10 minutes");
 							}
 						},
 						10 * 60 * 1000,
 					); // 10 minutes
 				} catch (err) {
-					console.log("[v0] Failed to activate screen wake lock:", err);
+					console.log("Failed to activate screen wake lock:", err);
 				}
 			}
 		};
@@ -143,7 +145,7 @@ export function RecetteSection() {
 			if (wakeLockRef.current) {
 				wakeLockRef.current.release();
 				wakeLockRef.current = null;
-				console.log("[v0] Screen wake lock released");
+				console.log("Screen wake lock released");
 			}
 			if (timeoutRef.current) {
 				clearTimeout(timeoutRef.current);
@@ -163,7 +165,7 @@ export function RecetteSection() {
 		};
 	}, [screenWakeLock]);
 
-	const toggleIngredient = (categoryIndex, itemIndex) => {
+	const toggleIngredient = (categoryIndex: number, itemIndex: number) => {
 		const key = `${categoryIndex}-${itemIndex}`;
 		const newChecked = new Set(checkedIngredients);
 		if (newChecked.has(key)) {
@@ -310,39 +312,21 @@ export function RecetteSection() {
 					{/* Instructions */}
 					<div className="lg:col-span-2">
 						<div className="rounded-2xl bg-white p-6 shadow-xl">
-							<div className="mb-6 flex items-center justify-between">
+							<div className="mb-6 flex flex-wrap justify-between gap-4">
 								<h2 className="flex items-center gap-2 text-xl font-bold text-gray-800">
 									<ChefHat className="h-5 w-5 text-purple-500" />
 									{t("instructions")}
 								</h2>
-								<div className="flex items-center gap-3">
-									<label
-										htmlFor="screen-wake-lock"
-										className="text-sm font-medium text-gray-700"
-									>
+								<div className="flex min-w-fit flex-1 items-center justify-end gap-2">
+									<Label htmlFor="wakelock-switch">
 										{t("maintain_screen_on")}
-									</label>
-									<div className="relative">
-										<input
-											type="checkbox"
-											id="screen-wake-lock"
-											checked={screenWakeLock}
-											onChange={(e) => setScreenWakeLock(e.target.checked)}
-											className="sr-only"
-										/>
-										<div
-											className={`h-6 w-11 cursor-pointer rounded-full transition-colors ${
-												screenWakeLock ? "bg-purple-500" : "bg-gray-300"
-											}`}
-											onClick={() => setScreenWakeLock(!screenWakeLock)}
-										>
-											<div
-												className={`h-4 w-4 transform rounded-full bg-white shadow-md transition-transform ${
-													screenWakeLock ? "translate-x-6" : "translate-x-1"
-												} mt-1`}
-											/>
-										</div>
-									</div>
+									</Label>
+									<Switch
+										className="data-[state=checked]:bg-purple-500"
+										id="wakelock-switch"
+										checked={screenWakeLock}
+										onCheckedChange={setScreenWakeLock}
+									/>
 								</div>
 							</div>
 
