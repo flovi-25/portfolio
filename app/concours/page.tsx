@@ -17,19 +17,26 @@ export default function ConcoursPage() {
 			image: "/images/livre-cake-show.jpg",
 			description:
 				"Publication d'une recette dans le livre Le Cake Show de Sophie. Livre de recette paru en 2006 suite à une sélection par Sophie Dudemaine de 80 recettes inédites parmi des milliers de propositions de ces précédents lecteurs.",
-			liens: "Vers le livre : ici",
+			liens: `<a
+								href="https://www.fnac.com/a1857553/Sophie-Dudemaine-Cake-show-de-Sophie"
+								target="_blank"
+								class="underline text-blue-500"
+								rel="noreferrer nofollow"
+							>
+								Voir le livre sur le site de la FNAC
+							</a>`,
 		},
 		{
 			title: "Seconde place à un concours régional de cuisine",
 			image: "/images/est-republicain.jpg",
-			description: "2007 : organisé par le journal local.",
+			description: "2007 – Organisé par le journal local.",
 			liens: "",
 		},
 		{
 			title: "Premier prix au concours interne ESIAB Mon projet en 180'S ",
 			image: "/images/dessert-magique.png",
 			description:
-				"2015 : il s'agit d'une crème dessert ludique pouvant changer de goût et de couleur en fonction de la volonté du consommateur.",
+				"2015 – Il s'agit d'une crème dessert ludique pouvant changer de goût et de couleur en fonction de la volonté du consommateur.",
 			liens: " ",
 		},
 		{
@@ -37,25 +44,22 @@ export default function ConcoursPage() {
 				"Prix spécial du jury lors de la 10ème édition du Trophée Louis Pasteur",
 			image: "/images/louis-pasteur.jpg",
 			description:
-				"2015 : Notre récompense : passer une journée en compagnie du parrain du concours : Hervé THIS le célèbre chimiste de l’INRA à l’origine de la Gastronomie moléculaire. ",
+				"2015 – Notre récompense : passer une journée en compagnie du parrain du concours, Hervé THIS, le célèbre chimiste de l'INRA à l'origine de la Gastronomie moléculaire.",
 			liens: `<a
-									href="/Communiqué  de presse Trophées  Louis Pasteur Juin2015.pdf"
-									target="_blank"
-									className="flex items-center gap-2"
-									rel="noreferrer nofollow"
-								>
-									<FileText className="h-4 w-4" />
-									Communiqué de presse
-								</a> <br /> <a
-									href="/Capital 288.pdf"
-									target="_blank"
-									className="flex items-center gap-2"
-									rel="noreferrer nofollow"
-								>
-									<FileText className="h-4 w-4" />
-									Article Capital n288 2015 page 20
-								</a>
-							 `,
+								href="/Communiqué  de presse Trophées  Louis Pasteur Juin2015.pdf"
+								target="_blank"
+								class="underline text-blue-500"
+								rel="noreferrer nofollow"
+							>
+								Communiqué de presse
+							</a> <br /> <a
+								href="/Capital 288.pdf"
+								target="_blank"
+								class="underline text-blue-500"
+								rel="noreferrer nofollow"
+							>
+								Article Capital n288 2015 page 20
+							</a>`,
 		},
 	];
 
