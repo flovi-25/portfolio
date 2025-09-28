@@ -1,13 +1,13 @@
 "use client";
-import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
 import { ExpertiseSection } from "@/components/expertise-section";
+import { HeroSection } from "@/components/hero-section";
 
-import { TimelineSection } from "@/components/timeline-section";
-import { RecetteSection } from "@/components/recette-section";
 import { ContactSection } from "@/components/contact-section";
-import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { RecetteSection } from "@/components/recette-section";
+import { TimelineSection } from "@/components/timeline-section";
 
 export default function Page() {
 	return (
