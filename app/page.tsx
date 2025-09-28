@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { RecipeSection } from "@/components/recipe-section";
 import { TimelineSection } from "@/components/timeline-section";
-
+//test
 export default function Page() {
 	return (
 		<div className="bg-background min-h-screen">
