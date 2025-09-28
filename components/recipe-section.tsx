@@ -103,7 +103,7 @@ export function RecipeSection() {
 	const shareLink = useRef<string>("");
 
 	useEffect(() => {
-		shareLink.current = `https://${location.host}/${titleId}`;
+		shareLink.current = `https://${location.host}#${titleId}`;
 	}, []);
 
 	useEffect(() => {
@@ -200,7 +200,7 @@ export function RecipeSection() {
 												if (navigator.share) {
 													navigator.share({
 														title: "Coques de Macarons",
-														text: "La recette signature de Florence Viprey\n",
+														text: "La recette signature de Florence Viprey :\n",
 														url: shareLink.current,
 													});
 												} else if (navigator.clipboard) {
