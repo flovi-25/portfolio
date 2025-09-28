@@ -97,7 +97,7 @@ export default function ConcoursPage() {
 						</h1>
 						<div className="mx-auto max-w-4xl">
 							<p className="font-geometria text-lg leading-relaxed text-gray-700 sm:text-xl">
-								ou comment sortir de sa zone de confiance.
+								ou comment sortir de sa zone de confort.
 							</p>
 						</div>
 					</div>

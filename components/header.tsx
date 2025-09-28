@@ -39,7 +39,7 @@ export function Header() {
 									rel="noreferrer nofollow"
 								>
 									<FileText className="h-4 w-4" />
-									{t("Ouvrir mon CV")}
+									{t("Mon CV")}
 								</a>
 							</DropdownMenuItem>
 							<DropdownMenuItem asChild>

@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { useLanguage } from "@/hooks/use-language";
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/hooks/use-language";
+import Image from "next/image";
 
 export function GallerySection() {
 	const { t } = useLanguage();
@@ -14,7 +14,7 @@ export function GallerySection() {
 						Galerie
 					</h2>
 					<p className="font-geometria text-muted-foreground mx-auto max-w-2xl text-lg">
-						Découvrez quelques moments marquants de mes aventures et créations
+						Découvrez quelques moments marquants de mes aventures et créations.
 					</p>
 				</div>
 

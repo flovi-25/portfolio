@@ -88,7 +88,7 @@ const timelineData = [
 		company: "Voyage personnel",
 		location: "Côte Est, Chine",
 		description:
-			"Il s'agit là de mon tout premier voyage, pas encore majeur mais déjà avec une soif d'aller découvrir le monde et ses habitants. Ces deux mois passé à partager le quotidien d'une famille chinoise n'ont éclairé sur le fait que nous avons tous à apprendre des autres cultures.",
+			"Il s'agit là de mon tout premier voyage, pas encore majeur mais déjà avec une soif d'aller découvrir le monde et ses habitants. Ces deux mois passé à partager le quotidien d'une famille chinoise m'ont éclairé sur le fait que nous avons tous à apprendre des autres cultures.",
 		achievements: ["Aventure"],
 	},
 	{
@@ -101,7 +101,7 @@ const timelineData = [
 			"La conception du dessert magique, la naissance d'un dessert innovant et ludique à destination des enfants.",
 		achievements: [
 			"Prix spécial concours Louis Pasteur 2015",
-			"Prix mon projet en 180sec",
+			"Prix Mon projet en 180 secondes",
 			"Interview professionnel",
 		],
 	},
@@ -122,7 +122,7 @@ const timelineData = [
 		company: "De Kroes Feuilletage",
 		location: "Semur en Auxois(21), France",
 		description:
-			"De Kroes Feuilletage m'a fait confiance malgré mon jeune âge lors de ce stage pour mes laisser les reines du développement d'un produit pour l'un de ces importants clients. La tâche fut rude pour convertir une ligne de production à un nouveau proccess mais fut couronné de succès.",
+			"De Kroes Feuilletage m'a fait confiance malgré mon jeune âge lors de ce stage pour mes laisser les reines du développement d'un produit pour l'un de ces importants clients. La tâche fut rude pour convertir une ligne de production à un nouveau proccess mais fut couronnée de succès.",
 		achievements: [
 			"Commercialisation d'un cracker, 70% d'avis client positifs",
 			"Autonomie",
@@ -159,7 +159,7 @@ const timelineData = [
 		company: "Pasquier",
 		location: "Vron (80), France",
 		description:
-			"De l'identification des besoins, au lancement d'un produit, les étapes sont passionnantes et diversifiées. Le groupe Pasquier offre l'avantage de pouvoir laisser s'éclater lors du processus de développement en mettant la main à la pâte et en étant un pilier central.",
+			"De l'identification des besoins au lancement d'un produit, les étapes sont passionnantes et diversifiées. Le groupe Pasquier offre l'avantage de pouvoir laisser s'éclater lors du processus de développement en mettant la main à la pâte et en étant un pilier central.",
 		achievements: [
 			"Elargissement de l'offre de plus 50% pour un client majeur international",
 			"Industrialisation des Duos",
@@ -170,9 +170,9 @@ const timelineData = [
 		year: "2024",
 		title: "Australie",
 		company: "Voyage personnel",
-		location: "Perth, WA",
+		location: "Perth, Australie-Occidentale",
 		description:
-			"Immersion dans un pays où le \"no worries\" (traduction : Pas de problème) illustre parfaitement l'état d'esprit de ses habitants.",
+			'Immersion dans un pays où le "no worries" (traduction : "pas de problème") illustre parfaitement l\'état d\'esprit de ses habitants.',
 		achievements: ["Immersion dans une nouvelle culture"],
 	},
 	{
@@ -182,7 +182,7 @@ const timelineData = [
 		company: "Materne Industries",
 		location: "Boué (02), France",
 		description:
-			"Business B to B Français et International. Participer à des projets techniquement riches et variés, en collaboration avec des interlocuteurs pluridisciplinaires. Planifier, suivre et finaliser de projets R&D dans un environnement industriel dynamique et exigeant. Encadrement d'une chef de projet R&D junior.",
+			"Business B to B français et international. Participer à des projets techniquement riches et variés, en collaboration avec des interlocuteurs pluridisciplinaires. Planifier, suivre et finaliser de projets R&D dans un environnement industriel dynamique et exigeant. Encadrement d'une chef de projet R&D junior.",
 		achievements: [
 			"Acquisition d'un nouveau marché à plus de 100T/an",
 			"Pratique de l'anglais professionel",
@@ -244,9 +244,9 @@ export function TimelineSection() {
 					<h2 className="mb-4 font-serif text-3xl font-bold text-slate-800 sm:mb-6 sm:text-4xl md:text-5xl">
 						Mon Parcours
 					</h2>
-					<p className="mx-auto max-w-2xl px-4 text-base text-slate-600 sm:text-lg">
+					<p className="mx-auto px-4 text-base text-slate-600 sm:text-lg">
 						Une évolution professionnelle riche, alliant expertise technique et
-						passion créative
+						passion créative.
 					</p>
 				</div>
 

@@ -38,7 +38,7 @@ export default function LogiquePage() {
 			<section className="py-6 sm:py-6 lg:py-10">
 				<div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 					<div className="mx-auto mb-12 max-w-4xl">
-						<p className="font-geometria text-justify text-lg leading-relaxed text-slate-700">
+						<p className="font-geometria text-lg leading-relaxed text-slate-700 sm:text-justify">
 							Participer à l'enregistrement d'une émission 100% logique a été
 							une expérience extraordinaire qui m'a permis de découvrir un
 							univers fascinant où la réflexion, la stratégie et l'analyse se

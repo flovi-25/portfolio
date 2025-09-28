@@ -14,7 +14,7 @@ export function AboutSection() {
 						<h2 className="mb-4 font-serif text-3xl font-bold text-balance sm:mb-6 sm:text-4xl md:text-5xl">
 							{t("about_title")}
 						</h2>
-						<div className="text-muted-foreground space-y-4 leading-relaxed sm:space-y-6">
+						<div className="text-muted-foreground space-y-4 leading-relaxed sm:space-y-6 sm:text-justify">
 							<p className="text-sm sm:text-base">{t("about_p1")}</p>
 							<p className="text-sm sm:text-base">{t("about_p2")}</p>
 							<p className="text-sm sm:text-base">{t("about_p3")}</p>

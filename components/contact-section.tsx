@@ -10,14 +10,14 @@ export function ContactSection() {
 
 	return (
 		<section className="bg-gradient-to-br from-pink-50 to-purple-50 px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
-			<div className="mx-auto max-w-4xl text-center">
+			<div className="mx-auto text-center">
 				<h2 className="mb-4 font-serif text-3xl font-bold text-slate-800 sm:mb-6 sm:text-4xl md:text-5xl">
-					Contact pro.
+					Contact
 				</h2>
-				<div className="text-muted-foreground mx-auto mb-8 max-w-2xl px-4 text-base sm:mb-12 sm:text-lg">
+				<div className="text-muted-foreground mx-auto mb-8 px-4 text-base sm:mb-12 sm:text-lg">
 					<p className="mb-2">
 						Florence Viprey, chef de projet en Recherche et Développement et
-						pâtissière
+						pâtissière.
 					</p>
 					<p className="mb-2">Envie d'en connaître davantage ?</p>
 					<p>Échangeons !</p>

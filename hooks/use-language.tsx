@@ -41,11 +41,11 @@ const translations = {
 		about_p1:
 			"Passionnée par l'innovation alimentaire et la Pâtisserie, j'ai construis mon parcours professionel pour le rendre le plus complet possible dans l'univers exigeant du sucré.",
 		about_p2:
-			"Mon profil allie une double expertise; le théorique par mon Master en Innovation en Agro alimentaire (à l'ESIAB) et la pratique par mon CAP Pâtisserie + mon expérience terrain en production (via mon poste de chef de ligne chez Erhard ou les industrialisations produits réalisées chez Pasquier ou Materne).",
+			"Mon profil allie une double expertise ; le théorique par mon Master en Innovation en Agro alimentaire (à l'ESIAB) et la pratique par mon CAP Pâtisserie + mon expérience terrain en production (via mon poste de chef de ligne chez Erhard ou les industrialisations produits réalisées chez Pasquier ou Materne).",
 		about_p3:
 			"Mon expertise couvre la formulation de produits, l'analyse sensorielle, l'analyse des risques et la gestion de projets R&D dans l'industrie agro-alimentaire.",
 		about_p4:
-			"Mes atouts pour un poste en R&D sont: Ma créativité et ma fibre d'innovation, mon approche terrain avec mon expérience en production et en industrialisation, mes compétences en management et coordination, ainsi que ma mobilité et adaptabilité pour les opportunités en France comme à l'international.",
+			"Mes atouts pour un poste en R&D sont : ma créativité et ma fibre d'innovation, mon approche terrain avec mon expérience en production et en industrialisation, mes compétences en management et coordination, ainsi que ma mobilité et adaptabilité pour les opportunités en France comme à l'international.",
 		years_experience: "Années d'expérience",
 		projects_completed: "Projets réalisés",
 		companies_helped: "Entreprises accompagnées",
