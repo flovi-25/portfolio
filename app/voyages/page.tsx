@@ -26,7 +26,7 @@ export default function VoyagesPage() {
 				<div className="mx-auto max-w-4xl text-center">
 					{/* Placeholder Image */}
 					<div className="mb-8">
-						<div className="mx-auto flex h-32 w-full max-w-2xl items-center justify-center border-2 border-gray-300 bg-gray-50">
+						<div className="mx-auto flex w-full max-w-2xl items-center justify-center border-2 border-gray-300 bg-gray-50">
 							<Image
 								src="/images/carte-monde.png"
 								alt="Carte du monde"

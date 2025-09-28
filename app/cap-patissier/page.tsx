@@ -137,7 +137,7 @@ export default function LogiquePage() {
 					}}
 				>
 					<div className="rounded-md bg-black/90 px-3 py-2 text-xs font-medium tracking-wide whitespace-nowrap text-white uppercase shadow-lg">
-						Cliquez et glissez
+						Cliquez & glissez
 					</div>
 				</div>
 			)}
