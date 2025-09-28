@@ -145,7 +145,7 @@ const timelineData = [
 		company: "Erhard",
 		location: "Thurey Le Mont (25), France",
 		description:
-			"Erhard avec son catalogue de produits très étoffé et diversifié, cette société offre de nombreuses compétences produits et industrielles.",
+			"Erhard avec son catalogue de produits très étoffé, offre de nombreuses compétences produits et industrielles.",
 		achievements: [
 			"Baisse de 100% des ruptures journalières",
 			"Exigence qualité maintenue à 100%",
@@ -159,7 +159,7 @@ const timelineData = [
 		company: "Pasquier",
 		location: "Vron (80), France",
 		description:
-			"De l'identification des besoins au lancement d'un produit, les étapes sont passionnantes et diversifiées. Le groupe Pasquier offre l'avantage de pouvoir laisser s'éclater lors du processus de développement en mettant la main à la pâte et en étant un pilier central.",
+			"De l'identification des besoins au lancement d'un produit, les étapes sont passionnantes et diversifiées. Le groupe Pasquier offre l'opportunité de s'épanouir lors du processus de développement en mettant la main à la pâte et en étant un pilier central.",
 		achievements: [
 			"Elargissement de l'offre de plus 50% pour un client majeur international",
 			"Industrialisation des Duos",
