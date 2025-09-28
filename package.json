@@ -6,7 +6,7 @@
 		"build": "next build --turbopack",
 		"dev": "next dev --turbopack",
 		"start": "next start",
-		"lint": "next lint",
+		"lint": "eslint .",
 		"prettier": "prettier -w ."
 	},
 	"dependencies": {
