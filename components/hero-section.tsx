@@ -9,7 +9,7 @@ export function HeroSection() {
 	return (
 		<section className="relative h-[70vh] overflow-hidden">
 			<div className="absolute inset-0 flex items-center justify-center">
-				<div className="relative h-full w-full">
+				<div className="relative h-full w-full max-w-7xl">
 					<Image
 						src="/images/macaron-fv.jpg"
 						alt="fv"
