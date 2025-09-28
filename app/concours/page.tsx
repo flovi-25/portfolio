@@ -35,27 +35,27 @@ export default function ConcoursPage() {
   const recipes = [
     {
       title: "Publication d'une recette",
-      image: "/placeholder.svg",
+      image: "/livre-cake-show.jpg",
       description:
         "Publication d'une recette dans le livre Le Cake Show de Sophie. Livre de recette paru en 2006 suite à une sélection par Sophie Dudemaine de 80 recettes inédites parmi des milliers de propositions de ces précédents lecteurs.",
       liens: "Vers le livre: ici",
     },
     {
       title: "Seconde place à un concours régional de cuisine",
-      image: "/placeholder.svg",
+      image: "/est-republicain.jpg",
       description: "2007 : organisé par le journal local.",
       liens: "",
     },
     {
       title: "Premier prix au concours interne ESIAB Mon projet en 180'S ",
-      image: "/placeholder.svg",
+      image: "/dessert-magique.png",
       description:
         "2015 : il s'agit d'une crème dessert ludique pouvant changer de goût et de couleur en fonction de la volonté du consommateur.",
       liens: " ",
     },
     {
       title: "Prix spécial du jury lors de la 10ème édition du Trophée Louis Pasteur",
-      image: "/placeholder.svg",
+      image: "/louis-pasteur.jpg",
       description:
         "2015 : Notre récompense : passer une journée en compagnie du parrain du concours : Hervé THIS le célèbre chimiste de l’INRA à l’origine de la Gastronomie moléculaire. ",
       liens: "Communiqué de presse <br /> Article Capital n288 2015 page 20",

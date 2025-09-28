@@ -1,8 +1,10 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Clock, Users, ChefHat, Heart, Share2, Utensils, Flame, Camera } from "lucide-react"
+import { Clock, Users, ChefHat, Heart, Share2, Utensils, Flame } from "lucide-react"
+import Image from "next/image" // Added missing Image import from Next.js
 import { useLanguage } from "@/hooks/use-language"
+import { Card } from "@/components/ui/card"
 
 const recipeData = {
   title: "Coques de Macarons",
@@ -175,12 +177,18 @@ export function RecetteSection() {
         {/* Header de la recette */}
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden mb-8">
           <div className="md:flex">
-            {/* Icône Camera */}
-            <div className="md:w-2/5">
-              <div className="h-80 md:h-full bg-gradient-to-br from-pink-200 to-purple-200 flex items-center justify-center">
-                <Camera className="w-24 h-24 text-purple-500" />
+            {/* Image */}
+            <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="aspect-[4/3] relative overflow-hidden">
+                <Image
+                  src="/images/macaron-recette.jpg"
+                  alt="macarons"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-            </div>
+            </Card>
 
             {/* Informations principales */}
             <div className="md:w-3/5 p-8">

@@ -21,27 +21,27 @@ export default function LogiquePage() {
   const images = [
     {
       id: 1,
-      gradient: "from-blue-100 to-blue-200",
+      image: "/images/macarons.jpg",
       title: "Réalisation 1",
     },
     {
       id: 2,
-      gradient: "from-green-100 to-green-200",
+      image: "/images/buche-praline.jpg",
       title: "Réalisation 2",
     },
     {
       id: 3,
-      gradient: "from-purple-100 to-purple-200",
+      image: "/images/chouquettes.jpg",
       title: "Réalisation 3",
     },
     {
       id: 4,
-      gradient: "from-orange-100 to-orange-200",
+      image: "/images/brioche.jpg",
       title: "Réalisation 4",
     },
     {
       id: 5,
-      gradient: "from-pink-100 to-pink-200",
+      image: "/images/tarte.jpg",
       title: "Réalisation 5",
     },
   ]
@@ -180,25 +180,14 @@ export default function LogiquePage() {
             >
               <Card className="border-0 shadow-lg">
                 <div className="aspect-[4/3] relative">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${images[currentSlide].gradient} flex items-center justify-center transition-all duration-300 ${
-                      isDragging ? "scale-[0.98]" : ""
-                    }`}
-                  >
-                    <div className="text-center text-muted-foreground">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-white/80 rounded-full flex items-center justify-center">
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z"
-                          />
-                        </svg>
-                      </div>
-                      <p className="text-sm font-medium">{images[currentSlide].title}</p>
-                    </div>
-                  </div>
+                   <img
+                      src={currentSlide.image}
+                      alt={currentSlide.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700 group-hover:brightness-110"
+                    />
+                    
+        
+               
                 </div>
               </Card>
             </div>

@@ -25,13 +25,13 @@ export function Header() {
             <DropdownMenuContent align="start">
               <DropdownMenuItem asChild>
                 <a
-                  href="/Florence VIPREY cv 2025.pdf"
+                  href="/florence-viprey-cv-2025.html"
                   target="_blank"
                   className="flex items-center gap-2"
                   rel="noreferrer"
                 >
                   <FileText className="h-4 w-4" />
-                  {t("openCV")}
+                  {t("Ouvrir mon CV")}
                 </a>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>

@@ -1,8 +1,11 @@
+"use client"
 import { Card } from "@/components/ui/card"
 import { CakeSlice, Lightbulb, Trophy, Plane, Bike, Scissors } from "lucide-react"
 import Link from "next/link"
+import { useLanguage } from "@/hooks/use-language"
 
 const expertiseAreas = [
+
   {
     icon: Trophy,
     title: "Concours",
@@ -24,7 +27,7 @@ const expertiseAreas = [
 
   {
     icon: Scissors,
-    title: "Créations Ludiques",
+    title: "Créations",
     description: " Quelques exemples",
     link: "/creations",
   },
@@ -43,6 +46,8 @@ const expertiseAreas = [
 ]
 
 export function ExpertiseSection() {
+ const { t } = useLanguage()
+
   return (
     <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-pink-50">
       <div className="max-w-6xl mx-auto">

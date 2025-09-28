@@ -1,7 +1,8 @@
 "use client"
 
-import { Calendar, MapPin, Award, Camera } from "lucide-react"
+import { Calendar, MapPin, Award } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 
 const animationData = [
   { style: "slideBottom", repeat: "once", duration: "1200ms", delay: "0ms", intensity: "30px", starting_opacity: "0%" },
@@ -143,6 +144,18 @@ const timelineData = [
   },
 ]
 
+const timelineImages: { [key: number]: string } = {
+  1: "/images/chine.jpg", // Chine
+  2: "/images/dessert-magique.png", // Projet d'étude : le dessert magique
+  3: "/images/campus-wrexham.jpg", // Stage recherche au Pays de Galles
+  4: "/images/de-kroes.png", // Stage recherche et développement - De Kroes
+  5: "/images/cap-patissier.jpeg", // CAP Pâtissier
+  6: "/images/usine-erhard.jpg", // Chef de ligne - Erhard
+  7: "/images/pasquier.jpg", // Chef de projet R&D - Pasquier
+  8: "/images/australie.JPG", // Australie
+  9: "/images/mom.png", // Chef de projet R&D - Materne (using pasquier as placeholder)
+}
+
 export function TimelineSection() {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set())
   const [animatedItems, setAnimatedItems] = useState<Set<number>>(new Set())
@@ -224,8 +237,14 @@ export function TimelineSection() {
                     className={`w-full md:w-1/2 mb-4 md:mb-0 pl-12 md:pl-0 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}
                   >
                     <div className={`md:${index % 2 === 0 ? "text-right" : "text-left"}`}>
-                      <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-200">
-                        <Camera className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 text-blue-500" />
+                      <div className="inline-flex items-center justify-center w-50 h-50 sm:w-70 sm:h-70 md:w-90 md:h-90 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-200 overflow-hidden">
+                        <Image
+                          src={timelineImages[item.id] || "/images/placeholder.jpg"}
+                          alt={`${item.title} - ${item.company}`}
+                          width={128}
+                          height={128}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                   </div>

@@ -1,6 +1,11 @@
+"use client"
+
+import Image from "next/image"
+import { useLanguage } from "@/hooks/use-language"
 import { Card } from "@/components/ui/card"
 
 export function GallerySection() {
+  const { t } = useLanguage()
   return (
     <section className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto max-w-6xl">
@@ -12,63 +17,39 @@ export function GallerySection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Image 1 */}
           <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="aspect-[4/3] bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center relative overflow-hidden">
+            <div className="aspect-[4/3] relative overflow-hidden">
+              <Image
+                src="/images/couture.jpg"
+                alt="couture"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="text-center text-muted-foreground">
-                <div className="w-16 h-16 mx-auto mb-4 bg-white/80 rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                </div>
-                <p className="text-sm font-medium">Image à venir</p>
-              </div>
             </div>
           </Card>
 
-          {/* Image 2 */}
           <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center relative overflow-hidden">
+            <div className="aspect-[4/3] relative overflow-hidden">
+              <Image
+                src="/images/cadeau-ludique-1.jpg"
+                alt="Mise en place d'un jeu de piste vidéo ludique composé de plusieurs messages de proches et de cadeaux pour de la famille vivant à l'étranger."
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="text-center text-muted-foreground">
-                <div className="w-16 h-16 mx-auto mb-4 bg-white/80 rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                </div>
-                <p className="text-sm font-medium">Image à venir</p>
-              </div>
             </div>
           </Card>
 
-          {/* Image 3 */}
           <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="aspect-[4/3] bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center relative overflow-hidden">
+            <div className="aspect-[4/3] relative overflow-hidden">
+              <Image
+                src="/images/cadeau-ludique-2.jpg"
+                alt="Conception d'une boîte cadeau sous la forme d'un escape room personnalisé. Le but étant de faire passer un moment agréable et de bien mériter ses cadeaux de Noël."
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="text-center text-muted-foreground">
-                <div className="w-16 h-16 mx-auto mb-4 bg-white/80 rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                </div>
-                <p className="text-sm font-medium">Image à venir</p>
-              </div>
             </div>
           </Card>
         </div>

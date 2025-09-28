@@ -1,8 +1,13 @@
+"use client"
+
+import { useLanguage } from "@/hooks/use-language"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Linkedin, Instagram, Mail } from "lucide-react"
 
 export function ContactSection() {
+ const { t } = useLanguage()
+ 
   return (
     <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-pink-50 to-purple-50">
       <div className="max-w-4xl mx-auto text-center">

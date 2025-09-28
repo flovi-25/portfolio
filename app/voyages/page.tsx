@@ -24,7 +24,7 @@ export default function VoyagesPage() {
           {/* Placeholder Image */}
           <div className="mb-8">
             <div className="w-full max-w-2xl mx-auto h-32 border-2 border-gray-300 bg-gray-50 flex items-center justify-center">
-              <Image src="/placeholder.svg" width={800} height={400} className="w-full h-full object-cover" />
+              <Image src="/carte-monde.png" width={800} height={400} className="w-full h-full object-cover" />
             </div>
           </div>
 
