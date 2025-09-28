@@ -40,11 +40,11 @@ export default function LogiquePage() {
 			image: "/images/brioche.jpg",
 			title: "Réalisation 4",
 		},
-		// {
-		// 	id: 5,
-		// 	image: "/images/tarte.jpg",
-		// 	title: "Réalisation 5",
-		// },
+		{
+			id: 5,
+			image: "/images/tarte.jpg",
+			title: "Réalisation 5",
+		},
 	];
 
 	const handleMouseDown = (e: React.MouseEvent) => {
