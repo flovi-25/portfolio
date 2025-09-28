@@ -40,11 +40,11 @@ export default function LogiquePage() {
 			image: "/images/brioche.jpg",
 			title: "Réalisation 4",
 		},
-		{
-			id: 5,
-			image: "/images/tarte.jpg",
-			title: "Réalisation 5",
-		},
+		// {
+		// 	id: 5,
+		// 	image: "/images/tarte.jpg",
+		// 	title: "Réalisation 5",
+		// },
 	];
 
 	const handleMouseDown = (e: React.MouseEvent) => {
@@ -185,12 +185,25 @@ export default function LogiquePage() {
 						>
 							<Card className="border-0 shadow-lg">
 								<div className="relative aspect-[4/3]">
-									<Image
-										className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-										src={images[currentSlide].image}
-										alt={images[currentSlide].title}
-										fill
-									/>
+									<div
+										className={`absolute inset-0 flex items-center justify-center bg-gradient-to-br transition-all duration-300 ${
+											isDragging ? "scale-[0.98]" : ""
+										}`}
+									>
+										<div className="text-muted-foreground text-center">
+											<div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/80">
+												<Image
+													className="pointer-events-none"
+													src={images[currentSlide].image}
+													alt={images[currentSlide].title}
+													fill
+												/>
+											</div>
+											<p className="text-sm font-medium">
+												{images[currentSlide].title}
+											</p>
+										</div>
+									</div>
 								</div>
 							</Card>
 						</div>
