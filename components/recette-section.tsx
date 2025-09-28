@@ -1,6 +1,5 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
 import {
 	ChefHat,
@@ -11,7 +10,7 @@ import {
 	Users,
 	Utensils,
 } from "lucide-react";
-import Image from "next/image"; // Added missing Image import from Next.js
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Label } from "./ui/label";
 import { Switch } from "./ui/switch";
@@ -187,73 +186,67 @@ export function RecetteSection() {
 				</div>
 
 				{/* Header de la recette */}
-				<div className="mb-8 overflow-hidden rounded-3xl bg-white shadow-2xl">
-					<div className="md:flex">
-						{/* Image */}
-						<Card className="group overflow-hidden border-0 shadow-lg transition-all duration-300 hover:shadow-xl">
-							<div className="relative aspect-[4/3] overflow-hidden">
-								<Image
-									src="/images/macaron-recette.jpg"
-									alt="macarons"
-									fill
-									className="object-cover transition-transform duration-300 group-hover:scale-105"
-								/>
-								<div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+				<div className="mb-8 flex flex-wrap overflow-hidden rounded-3xl bg-white shadow-2xl">
+					{/* Informations principales */}
+					<div className="p-8 md:w-3/5">
+						<div className="mb-4 flex items-start justify-between">
+							<div>
+								<h1 className="mb-3 font-serif text-3xl font-bold text-gray-800 md:text-4xl">
+									{t("recipe_title")}
+								</h1>
+								<p className="mb-4 leading-relaxed text-gray-600">
+									{t("recipe_description")}
+								</p>
 							</div>
-						</Card>
-
-						{/* Informations principales */}
-						<div className="p-8 md:w-3/5">
-							<div className="mb-4 flex items-start justify-between">
-								<div>
-									<h1 className="mb-3 font-serif text-3xl font-bold text-gray-800 md:text-4xl">
-										{t("recipe_title")}
-									</h1>
-									<p className="mb-4 leading-relaxed text-gray-600">
-										{t("recipe_description")}
-									</p>
-								</div>
-								<div className="flex gap-2">
-									<button
-										onClick={toggleFavorite}
-										className={`rounded-full p-2 transition-colors ${isFavorite ? "bg-red-100 text-red-500" : "bg-gray-100 text-gray-500"}`}
-									>
-										<Heart
-											className="h-5 w-5"
-											fill={isFavorite ? "currentColor" : "none"}
-										/>
-									</button>
-									<button className="rounded-full bg-gray-100 p-2 text-gray-500 transition-colors hover:bg-gray-200">
-										<Share2 className="h-5 w-5" />
-									</button>
-								</div>
-							</div>
-
-							{/* Métriques */}
-							<div className="mb-6 grid grid-cols-2 gap-4 md:grid-cols-3">
-								<div className="rounded-xl bg-purple-50 p-3 text-center">
-									<Clock className="mx-auto mb-1 h-5 w-5 text-purple-500" />
-									<div className="text-sm font-semibold text-gray-700">
-										{recipeData.totalTime}
-									</div>
-									<div className="text-xs text-gray-500">{t("total")}</div>
-								</div>
-								<div className="rounded-xl bg-blue-50 p-3 text-center">
-									<Users className="mx-auto mb-1 h-5 w-5 text-blue-500" />
-									<div className="text-sm font-semibold text-gray-700">
-										{recipeData.servings}
-									</div>
-									<div className="text-xs text-gray-500">{t("people")}</div>
-								</div>
-								<div className="rounded-xl bg-green-50 p-3 text-center">
-									<Flame className="mx-auto mb-1 h-5 w-5 text-green-500" />
-									<div className="text-sm font-semibold text-gray-700">
-										{recipeData.difficulty}
-									</div>
-									<div className="text-xs text-gray-500">{t("difficulty")}</div>
-								</div>
+							<div className="flex gap-2">
+								<button
+									onClick={toggleFavorite}
+									className={`rounded-full p-2 transition-colors ${isFavorite ? "bg-red-100 text-red-500" : "bg-gray-100 text-gray-500"}`}
+								>
+									<Heart
+										className="h-5 w-5"
+										fill={isFavorite ? "currentColor" : "none"}
+									/>
+								</button>
+								<button className="rounded-full bg-gray-100 p-2 text-gray-500 transition-colors hover:bg-gray-200">
+									<Share2 className="h-5 w-5" />
+								</button>
 							</div>
 						</div>
+
+						{/* Métriques */}
+						<div className="mb-6 grid grid-cols-2 gap-4 md:grid-cols-3">
+							<div className="rounded-xl bg-purple-50 p-3 text-center">
+								<Clock className="mx-auto mb-1 h-5 w-5 text-purple-500" />
+								<div className="text-sm font-semibold text-gray-700">
+									{recipeData.totalTime}
+								</div>
+								<div className="text-xs text-gray-500">{t("total")}</div>
+							</div>
+							<div className="rounded-xl bg-blue-50 p-3 text-center">
+								<Users className="mx-auto mb-1 h-5 w-5 text-blue-500" />
+								<div className="text-sm font-semibold text-gray-700">
+									{recipeData.servings}
+								</div>
+								<div className="text-xs text-gray-500">{t("people")}</div>
+							</div>
+							<div className="rounded-xl bg-green-50 p-3 text-center">
+								<Flame className="mx-auto mb-1 h-5 w-5 text-green-500" />
+								<div className="text-sm font-semibold text-gray-700">
+									{recipeData.difficulty}
+								</div>
+								<div className="text-xs text-gray-500">{t("difficulty")}</div>
+							</div>
+						</div>
+					</div>
+
+					<div className="relative min-h-80 flex-1">
+						<Image
+							src="/images/macaron-recette.jpg"
+							alt="macarons"
+							fill
+							className="object-cover transition-transform duration-300"
+						/>
 					</div>
 				</div>
 
