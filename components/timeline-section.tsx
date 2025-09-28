@@ -287,7 +287,7 @@ export function TimelineSection() {
 								>
 									{/* Icon section */}
 									<div
-										className={`mb-4 w-full pl-12 md:mb-0 md:w-1/2 md:pl-0 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}
+										className={`mb-4 w-full md:mb-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}
 									>
 										<div
 											className={cn(
@@ -311,7 +311,7 @@ export function TimelineSection() {
 
 									{/* Content section */}
 									<div
-										className={`w-full pl-12 md:w-1/2 md:pl-0 ${index % 2 === 0 ? "md:pl-12" : "md:pr-12"}`}
+										className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pl-12" : "md:pr-12"}`}
 									>
 										<div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-xl transition-all duration-300 hover:shadow-2xl sm:p-6 md:p-8">
 											{/* Badge année */}
