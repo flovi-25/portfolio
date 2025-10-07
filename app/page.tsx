@@ -17,8 +17,8 @@ export default function Page() {
 			<main className="flex flex-col">
 				<HeroSection />
 				<AboutSection />
-				<ExpertiseSection />
 				<TimelineSection />
+				<ExpertiseSection />
 				<RecipeSection />
 				<ContactSection />
 			</main>

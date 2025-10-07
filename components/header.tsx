@@ -54,7 +54,7 @@ export function Header() {
 							</DropdownMenuItem>
 							<DropdownMenuItem asChild>
 								<a
-									href="https://www.instagram.com/florences_challenges/"
+									href="https://www.instagram.com/florence_challenges/"
 									target="_blank"
 									className="flex items-center gap-2"
 									rel="noreferrer nofollow"
