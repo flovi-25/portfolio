@@ -5,23 +5,30 @@ import {
 	CakeSlice,
 	Lightbulb,
 	Plane,
-	Scissors,
+	ChefHat,
 	Trophy,
 } from "lucide-react";
 import Link from "next/link";
 
 const expertiseAreas = [
+
+	{
+		icon: ChefHat,
+		title: "Le CAP pâtissier",
+		description: "2015",
+		link: "/cap-patissier",
+	},
+		{
+		icon: CakeSlice,
+		title: "Mes réalisations sucrées",
+		description: " Quelques exemples",
+		link: "/creations",
+	},
 	{
 		icon: Trophy,
 		title: "Concours",
 		description: "Depuis 2006",
 		link: "/concours",
-	},
-	{
-		icon: CakeSlice,
-		title: "Le CAP pâtissier",
-		description: "2015",
-		link: "/cap-patissier",
 	},
 	{
 		icon: Plane,
@@ -30,12 +37,7 @@ const expertiseAreas = [
 		link: "/voyages",
 	},
 
-	{
-		icon: Scissors,
-		title: "Créations",
-		description: " Quelques exemples",
-		link: "/creations",
-	},
+
 	{
 		icon: Lightbulb,
 		title: "100% Logique",

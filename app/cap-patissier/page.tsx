@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
-export default function LogiquePage() {
+export default function CapPatissierPage() {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const [isDragging, setIsDragging] = useState(false);
 	const [startX, setStartX] = useState(0);
@@ -27,23 +27,58 @@ export default function LogiquePage() {
 		},
 		{
 			id: 2,
-			image: "/images/buche-praline.jpg",
+			image: "/images/paris-brest.jpg",
 			title: "Réalisation 2",
 		},
 		{
 			id: 3,
-			image: "/images/chouquettes.jpg",
+			image: "/images/paris-brest(1).jpg",
 			title: "Réalisation 3",
 		},
 		{
 			id: 4,
-			image: "/images/brioche.jpg",
+			image: "/images/buche-ananas.jpg",
 			title: "Réalisation 4",
 		},
 		{
 			id: 5,
-			image: "/images/tarte.jpg",
+			image: "/images/chouquettes.jpg",
 			title: "Réalisation 5",
+		},
+		{
+			id: 6,
+			image: "/images/royal.jpg",
+			title: "Réalisation 6",
+		},
+		{
+			id: 7,
+			image: "/images/dessert-marrons.JPG",
+			title: "Réalisation 7",
+		},
+		{
+			id: 8,
+			image: "/images/macarons-boite.jpg",
+			title: "Réalisation 8",
+		},
+		{
+			id: 9,
+			image: "/images/brioche-nanterre.jpg",
+			title: "Réalisation 9",
+		},
+			{
+			id: 10,
+			image: "/images/tarte.jpg",
+			title: "Réalisation 10",
+		},
+		{
+			id: 11,
+			image: "/images/poire-caramel.jpg",
+			title: "Réalisation 11",
+		},
+		{
+			id: 12,
+			image: "/images/buche-pecan.jpg",
+			title: "Réalisation 12",
 		},
 	];
 
@@ -157,9 +192,10 @@ export default function LogiquePage() {
 			</header>
 
 			{/* Hero Section */}
-			<section className="py-12 sm:py-16 lg:py-20">
+
+			<section className="py-4 sm:py-6 lg:py-8">
 				<div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-					<h1 className="mb-4 font-serif text-3xl font-bold text-purple-800 sm:mb-6 sm:text-4xl md:text-5xl">
+					<h1 className="mb-4 text-foreground mb-4 font-serif text-3xl font-light text-purple-700 md:text-4xl">
 						Exemples de réalisations pour préparer mon CAP Pâtissier en candidat
 						libre
 					</h1>

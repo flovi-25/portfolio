@@ -9,10 +9,11 @@ export function GallerySection() {
 			<div className="container mx-auto max-w-6xl">
 				<div className="mb-12 text-center">
 					<h2 className="text-foreground mb-4 font-serif text-3xl font-light text-purple-700 md:text-4xl">
-						Galerie
+						De la technique à la création : bienvenue dans ma pâtisserie
 					</h2>
 					<p className="font-geometria text-muted-foreground mx-auto max-w-2xl text-lg">
-						Découvrez quelques moments marquants de mes aventures et créations.
+						Parce qu’une pâtisserie réussie, c’est autant le goût que l’émotion qu’elle évoque.
+						Découvrez quelques unes de mes dernières réalisations.
 					</p>
 				</div>
 
