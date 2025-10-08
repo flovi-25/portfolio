@@ -180,7 +180,7 @@ export default function CapPatissierPage() {
 			{/* Header */}
 			<Header />
 			<header className="bg-white shadow-sm">
-				<div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+				<div className="mt-25 mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
 					<Link
 						href="/"
 						className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
@@ -193,8 +193,8 @@ export default function CapPatissierPage() {
 
 			{/* Hero Section */}
 
-			<section className="py-4 sm:py-6 lg:py-8">
-				<div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+			<section className=" py-4 sm:py-6 lg:py-8">
+				<div className=" mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
 					<h1 className="mb-4 text-foreground mb-4 font-serif text-3xl font-light text-purple-700 md:text-4xl">
 						Exemples de réalisations pour préparer mon CAP Pâtissier en candidat
 						libre

@@ -14,18 +14,18 @@ import { FileText, Instagram, Linkedin, Mail, Menu } from "lucide-react";
 export function Header() {
 	const { t } = useLanguage();
 
-	return (
-		<header className="w-full bg-gradient-to-br from-pink-50 to-purple-50 px-4 py-3 sm:px-6 sm:py-4">
+		return (
+			<header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-pink-50 to-purple-50 px-4 py-3 sm:px-6 sm:py-4 shadow-md">
 			<div className="relative mx-auto mt-3 mb-25 flex max-w-7xl items-center justify-center sm:mb-15">
 				<div className="absolute left-0 z-50">
 					<DropdownMenu>
 						<DropdownMenuTrigger asChild>
 							<Button
 								variant="ghost"
-								size="sm"
-								className="text-foreground border border-white/20 bg-white/80 shadow-sm backdrop-blur-sm"
+								size="lg"
+								className="text-foreground  backdrop-blur-sm px-6 py-3 text-lg"
 							>
-								<Menu className="h-4 w-4" />
+								<Menu className="h-10 w-10 mr-2" />
 								Menu
 							</Button>
 						</DropdownMenuTrigger>
@@ -77,7 +77,7 @@ export function Header() {
 					</DropdownMenu>
 				</div>
 
-				<div className="center absolute z-50 mt-25 sm:mt-1">
+				<div className="center absolute z-50 mt-25 sm:mt-10">
 					<Logo />
 				</div>
 
