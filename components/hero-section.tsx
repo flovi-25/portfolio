@@ -1,7 +1,17 @@
 "use client";
-
 import { useLanguage } from "@/hooks/use-language";
 import Image from "next/image";
+
+import { motion } from "framer-motion";
+
+const bounceTransition = {
+	y: {
+		duration: 0.6,
+		repeat: Infinity,
+		repeatType: "reverse",
+		ease: "easeOut"
+	}
+};
 
 export function HeroSection() {
 	const { t } = useLanguage();
@@ -22,6 +32,8 @@ export function HeroSection() {
 				<div className="absolute inset-0 bg-black/30"></div>
 			</div>
 
+
+
 			{/* Superposed Text Content */}
 			<div className="relative z-10 flex min-h-[70vh] items-center justify-center px-4">
 				<div className="mx-auto max-w-4xl text-center">
@@ -32,8 +44,33 @@ export function HeroSection() {
 					<p className="mx-auto max-w-2xl px-4 text-xl leading-relaxed text-white/90 drop-shadow-md">
 						{t("hero_subtitle")}
 					</p>
-				</div>
+
+
+
+						{/* Arrow */}
+						<div className="flex justify-center mt-3">
+										<motion.div
+												animate={{
+													opacity: [0, 1, 0],
+													y:   [-30, 15, -30]
+												}}
+												transition={{
+													duration: 2.4,
+													repeat: Infinity,
+													ease: 'easeInOut'
+												}}
+										>
+												<Image
+														width={48}
+														height={42}
+														src="/images/chevrons.png"
+														alt="scroll down"
+												/>
+										</motion.div>
+						</div>
 			</div>
+
+		</div>
 		</section>
 	);
 }

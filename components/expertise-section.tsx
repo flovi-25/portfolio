@@ -58,7 +58,7 @@ export function ExpertiseSection() {
 			<div className="mx-auto max-w-6xl">
 				<div className="mb-8 text-center sm:mb-12">
 					<h2 className="mb-4 font-serif text-3xl font-bold text-slate-800 sm:mb-6 sm:text-4xl md:text-5xl">
-						Mes challenges
+						Mes challenges 
 					</h2>
 				</div>
 
