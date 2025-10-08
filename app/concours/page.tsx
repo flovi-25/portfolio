@@ -69,7 +69,7 @@ export default function ConcoursPage() {
 			<Header />
 
 			<header className="bg-white shadow-sm">
-				<div className="mt-25 mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+				<div className="mt-34 lg:mt-25 mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
 					<Link
 						href="/"
 						className="group flex items-center gap-2 text-blue-600 transition-all duration-200 hover:gap-3 hover:text-blue-800"
