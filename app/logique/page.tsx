@@ -26,7 +26,7 @@ export default function LogiquePage() {
 			<section className="py-12 sm:py-16 lg:py-20">
 				<div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
 					<h1 className="mb-4 font-serif text-3xl font-light text-purple-800 sm:mb-6 sm:text-4xl md:text-5xl">
-						Ma participation à l'enregistrement d'une émission 100% logique :
+						Ma participation à l'enregistrement d'une émission 100 % logique :
 					</h1>
 					<p className="font-geometria mb-4 text-2xl font-medium text-slate-800 sm:mb-6 sm:text-3xl md:text-5xl">
 						une expérience incroyablement enrichissante
@@ -39,11 +39,11 @@ export default function LogiquePage() {
 				<div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 					<div className="mx-auto mb-12 max-w-4xl">
 						<p className="font-geometria text-lg leading-relaxed text-slate-700 sm:text-justify">
-							Participer à l'enregistrement d'une émission 100% logique a été
+							Participer à l'enregistrement d'une émission 100 % logique a été
 							une expérience extraordinaire qui m'a permis de découvrir un
 							univers fascinant où la réflexion, la stratégie et l'analyse se
-							mélangent dans un cadre ludique et stimulant. Cette aventure
-							télévisuelle m'a confronté à des défis intellectuels variés,
+							mêlent dans un cadre ludique et stimulant. Cette aventure
+							télévisuelle m'a confrontée à des défis intellectuels variés,
 							allant des énigmes mathématiques aux puzzles de logique pure, en
 							passant par des jeux de déduction qui ont mis à l'épreuve ma
 							capacité à raisonner sous pression. L'atmosphère du plateau,

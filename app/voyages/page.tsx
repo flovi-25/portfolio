@@ -72,7 +72,7 @@ export default function VoyagesPage() {
 
 						<p>
 							En outre, le voyage permet surtout d'ouvrir son esprit à d'autres
-							façons de penser et à développer sa créativité.
+							façons de penser et de développer sa créativité.
 						</p>
 					</div>
 				</div>
