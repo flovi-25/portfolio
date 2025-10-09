@@ -34,7 +34,7 @@ const translations = {
 		// Hero Section
 		hero_title: "Hey, moi c'est Florence Viprey !",
 		hero_subtitle:
-			"Je suis chef de projet en Recherche et Développement en Agro-alimentaire et voici qui je suis...",
+			"Je suis chef de projet en Recherche et Développement en agroalimentaire et voici qui je suis...",
 
 		// About Section
 		about_title: "À propos de moi",
