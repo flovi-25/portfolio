@@ -40,7 +40,7 @@ const expertiseAreas = [
 
 	{
 		icon: Lightbulb,
-		title: "100% Logique",
+		title: "100 % Logique",
 		description: "2024",
 		link: "/logique",
 	},

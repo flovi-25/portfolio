@@ -58,7 +58,7 @@ export function HeroSection() {
 						className="flex items-center gap-2"
 					>
 						<FileText className="h-4 w-4" />
-						{t("Aller aux challenges")}
+						{t("Découvrir mes challenges")}
 					</a>
 				</Button>
 				<Button

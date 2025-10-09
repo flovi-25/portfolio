@@ -120,7 +120,7 @@ const timelineData = [
 		year: "2015",
 		title: "Stage recherche et développement",
 		company: "De Kroes Feuilletage",
-		location: "Semur en Auxois(21), France",
+		location: "Semur-en-Auxois (21), France",
 		description:
 			"De Kroes Feuilletage m'a fait confiance malgré mon jeune âge lors de ce stage pour me laisser les rênes du développement d'un produit pour l'un de ses importants clients. La tâche fut rude pour convertir une ligne de production à un nouveau process mais fut couronnée de succès.",
 		achievements: [
