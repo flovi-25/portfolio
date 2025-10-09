@@ -5,10 +5,74 @@ import type React from "react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
+
+const images = [
+	{
+		id: 1,
+		image: "/images/macarons.jpg",
+		title: "Réalisation 1",
+	},
+	{
+		id: 2,
+		image: "/images/paris-brest.jpg",
+		title: "Réalisation 2",
+	},
+	{
+		id: 3,
+		image: "/images/paris-brest(1).jpg",
+		title: "Réalisation 3",
+	},
+	{
+		id: 4,
+		image: "/images/buche-ananas.jpg",
+		title: "Réalisation 4",
+	},
+	{
+		id: 5,
+		image: "/images/chouquettes.jpg",
+		title: "Réalisation 5",
+	},
+	{
+		id: 6,
+		image: "/images/royal.jpg",
+		title: "Réalisation 6",
+	},
+	{
+		id: 7,
+		image: "/images/dessert-marrons.JPG",
+		title: "Réalisation 7",
+	},
+	{
+		id: 8,
+		image: "/images/macarons-boite.jpg",
+		title: "Réalisation 8",
+	},
+	{
+		id: 9,
+		image: "/images/brioche-nanterre.jpg",
+		title: "Réalisation 9",
+	},
+	{
+		id: 10,
+		image: "/images/tarte.jpg",
+		title: "Réalisation 10",
+	},
+	{
+		id: 11,
+		image: "/images/poire-caramel.jpg",
+		title: "Réalisation 11",
+	},
+	{
+		id: 12,
+		image: "/images/buche-pecan.jpg",
+		title: "Réalisation 12",
+	},
+];
 
 export default function CapPatissierPage() {
 	const [currentSlide, setCurrentSlide] = useState(0);
@@ -19,68 +83,9 @@ export default function CapPatissierPage() {
 	const [showCursor, setShowCursor] = useState(false);
 	const sliderRef = useRef<HTMLDivElement>(null);
 
-	const images = [
-		{
-			id: 1,
-			image: "/images/macarons.jpg",
-			title: "Réalisation 1",
-		},
-		{
-			id: 2,
-			image: "/images/paris-brest.jpg",
-			title: "Réalisation 2",
-		},
-		{
-			id: 3,
-			image: "/images/paris-brest(1).jpg",
-			title: "Réalisation 3",
-		},
-		{
-			id: 4,
-			image: "/images/buche-ananas.jpg",
-			title: "Réalisation 4",
-		},
-		{
-			id: 5,
-			image: "/images/chouquettes.jpg",
-			title: "Réalisation 5",
-		},
-		{
-			id: 6,
-			image: "/images/royal.jpg",
-			title: "Réalisation 6",
-		},
-		{
-			id: 7,
-			image: "/images/dessert-marrons.JPG",
-			title: "Réalisation 7",
-		},
-		{
-			id: 8,
-			image: "/images/macarons-boite.jpg",
-			title: "Réalisation 8",
-		},
-		{
-			id: 9,
-			image: "/images/brioche-nanterre.jpg",
-			title: "Réalisation 9",
-		},
-			{
-			id: 10,
-			image: "/images/tarte.jpg",
-			title: "Réalisation 10",
-		},
-		{
-			id: 11,
-			image: "/images/poire-caramel.jpg",
-			title: "Réalisation 11",
-		},
-		{
-			id: 12,
-			image: "/images/buche-pecan.jpg",
-			title: "Réalisation 12",
-		},
-	];
+	const [imageLoadings, setImageLoadings] = useState<boolean[]>(
+		images.map(() => true),
+	);
 
 	const handleMouseDown = (e: React.MouseEvent) => {
 		setIsDragging(true);
@@ -180,7 +185,7 @@ export default function CapPatissierPage() {
 			{/* Header */}
 			<Header />
 			<header className="bg-white shadow-sm">
-				<div className="mt-34 lg:mt-25 mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+				<div className="mx-auto mt-34 max-w-7xl px-4 py-4 sm:px-6 lg:mt-25 lg:px-8">
 					<Link
 						href="/"
 						className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
@@ -193,9 +198,9 @@ export default function CapPatissierPage() {
 
 			{/* Hero Section */}
 
-			<section className=" py-4 sm:py-6 lg:py-8">
-				<div className=" mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-					<h1 className="mb-4 text-foreground  font-serif text-3xl font-light text-purple-700 md:text-4xl">
+			<section className="py-4 sm:py-6 lg:py-8">
+				<div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+					<h1 className="text-foreground mb-4 font-serif text-3xl font-light text-purple-700 md:text-4xl">
 						Exemples de réalisations pour préparer mon CAP Pâtissier en candidat
 						libre
 					</h1>
@@ -220,20 +225,42 @@ export default function CapPatissierPage() {
 							style={{ cursor: showCursor ? "none" : "grab" }}
 						>
 							<Card className="border-0 shadow-lg">
-								<div className="relative aspect-[4/3]">
+								<div className="relative aspect-square w-full max-w-[1080px]">
 									<div
 										className={`absolute inset-0 flex items-center justify-center bg-gradient-to-br transition-all duration-300 ${
 											isDragging ? "scale-[0.98]" : ""
 										}`}
 									>
+										{/* Loading Spinner */}
+										{imageLoadings[currentSlide] && (
+											<div className="absolute inset-0 z-10 flex items-center justify-center bg-white/50">
+												<div className="h-12 w-12 animate-spin rounded-full border-4 border-purple-200 border-t-purple-600"></div>
+											</div>
+										)}
+
 										<div className="text-muted-foreground text-center">
 											<div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/80">
-												<Image
-													className="pointer-events-none"
-													src={images[currentSlide].image}
-													alt={images[currentSlide].title}
-													fill
-												/>
+												{images.map(({ id, image, title }, i) => (
+													<Image
+														key={id}
+														className={cn(
+															"pointer-events-none",
+															currentSlide !== i && "hidden",
+														)}
+														src={image}
+														alt={title}
+														priority={i - currentSlide < 3}
+														fill
+														onLoadingComplete={() => {
+															console.log("wtf");
+															console.log(i);
+															setImageLoadings((prev) => {
+																prev[i] = false;
+																return [...prev];
+															});
+														}}
+													/>
+												))}
 											</div>
 											<p className="text-sm font-medium">
 												{images[currentSlide].title}
@@ -267,6 +294,7 @@ export default function CapPatissierPage() {
 					</div>
 				</div>
 			</section>
+
 			<Footer />
 		</div>
 	);

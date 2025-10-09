@@ -5,11 +5,59 @@ import type React from "react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
+const images = [
+	{
+		id: 1,
+		image: "/images/paques.png",
+		title: "Réalisation 1",
+	},
+	{
+		id: 2,
+		image: "/images/Mini-tartelettes-matcha.png",
+		title: "Réalisation 2",
+	},
+	{
+		id: 3,
+		image: "/images/Buche-pralin.png",
+		title: "Réalisation 3",
+	},
+	{
+		id: 4,
+		image: "/images/piece-montee.png",
+		title: "Réalisation 4",
+	},
+	{
+		id: 5,
+		image: "/images/brioche.png",
+		title: "Réalisation 5",
+	},
+	{
+		id: 6,
+		image: "/images/tiramisu-express.png",
+		title: "Réalisation 6",
+	},
+	{
+		id: 7,
+		image: "/images/cinnamon.png",
+		title: "Réalisation 7",
+	},
+	{
+		id: 8,
+		image: "/images/tarte-myrtille.png",
+		title: "Réalisation 8",
+	},
+	{
+		id: 9,
+		image: "/images/buche-nougat.png",
+		title: "Réalisation 9",
+	},
+];
 
 export default function CreationsPage() {
 	const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,53 +68,9 @@ export default function CreationsPage() {
 	const [showCursor, setShowCursor] = useState(false);
 	const sliderRef = useRef<HTMLDivElement>(null);
 
-	const images = [
-		{
-			id: 1,
-			image: "/images/paques.png",
-			title: "Réalisation 1",
-		},
-		{
-			id: 2,
-			image: "/images/Mini-tartelettes-matcha.png",
-			title: "Réalisation 2",
-		},
-		{
-			id: 3,
-			image: "/images/Buche-pralin.png",
-			title: "Réalisation 3",
-		},
-		{
-			id: 4,
-			image: "/images/piece-montee.png",
-			title: "Réalisation 4",
-		},
-		{
-			id: 5,
-			image: "/images/brioche.png",
-			title: "Réalisation 5",
-		},
-		{
-			id: 6,
-			image: "/images/tiramisu-express.png",
-			title: "Réalisation 6",
-		},
-		{
-			id: 7,
-			image: "/images/cinnamon.png",
-			title: "Réalisation 7",
-		},
-		{
-			id: 8,
-			image: "/images/tarte-myrtille.png",
-			title: "Réalisation 8",
-		},
-		{
-			id: 9,
-			image: "/images/buche-nougat.png",
-			title: "Réalisation 9",
-		},
-	];
+	const [imageLoadings, setImageLoadings] = useState<boolean[]>(
+		images.map(() => true),
+	);
 
 	const handleMouseDown = (e: React.MouseEvent) => {
 		setIsDragging(true);
@@ -163,103 +167,127 @@ export default function CreationsPage() {
 				</div>
 			)}
 
-		<div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
-			{/* Header */}
-			<Header />
+			<div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
+				{/* Header */}
+				<Header />
 
-			<header className="bg-white shadow-sm">
-				<div className="mt-34 lg:mt-25 mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-					<Link
-						href="/"
-						className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
-					>
-						<ArrowLeft className="h-5 w-5" />
-						Retour à l'accueil
-					</Link>
-				</div>
-			</header>
+				<header className="bg-white shadow-sm">
+					<div className="mx-auto mt-34 max-w-7xl px-4 py-4 sm:px-6 lg:mt-25 lg:px-8">
+						<Link
+							href="/"
+							className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
+						>
+							<ArrowLeft className="h-5 w-5" />
+							Retour à l'accueil
+						</Link>
+					</div>
+				</header>
 
-			<section className="bg-muted/30 px-4 py-5">
-			<div className="container mx-auto max-w-6xl">
-				<div className="mb-6 text-center">
-					<h2 className="text-foreground mb-4 font-serif text-3xl font-light text-purple-700 md:text-4xl">
-						De la technique à la création : bienvenue dans ma pâtisserie
-					</h2>
-					<p className="font-geometria text-muted-foreground mx-auto max-w-2xl text-lg">
-						Parce qu’une pâtisserie réussie, c’est autant le goût que l’émotion qu’elle évoque.
-						Découvrez quelques-unes de mes dernières réalisations.
-					</p>
-				</div>
-			</div>
-			</section>
+				<section className="bg-muted/30 px-4 py-5">
+					<div className="container mx-auto max-w-6xl">
+						<div className="mb-6 text-center">
+							<h2 className="text-foreground mb-4 font-serif text-3xl font-light text-purple-700 md:text-4xl">
+								De la technique à la création : bienvenue dans ma pâtisserie
+							</h2>
+							<p className="font-geometria text-muted-foreground mx-auto max-w-2xl text-lg">
+								Parce qu’une pâtisserie réussie, c’est autant le goût que
+								l’émotion qu’elle évoque. Découvrez quelques-unes de mes
+								dernières réalisations.
+							</p>
+						</div>
+					</div>
+				</section>
 
-						{/* Slider Section */}
-						<section className="py-4 sm:py-6 lg:py-8">
-							<div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-								<div className="relative">
-									<div
-										ref={sliderRef}
-										className="relative overflow-hidden rounded-lg select-none"
-										onMouseDown={handleMouseDown}
-										onMouseMove={handleMouseMove}
-										onMouseUp={handleMouseUp}
-										onMouseEnter={handleMouseEnter}
-										onMouseLeave={handleMouseLeave}
-										onTouchStart={handleTouchStart}
-										onTouchMove={handleTouchMove}
-										onTouchEnd={handleTouchEnd}
-										style={{ cursor: showCursor ? "none" : "grab" }}
-									>
-										<Card className="border-0 shadow-lg">
-											<div className="relative w-full max-w-[1080px] aspect-square">
-												<div
-													className={`absolute inset-0 flex items-center justify-center bg-gradient-to-br transition-all duration-300 ${
-														isDragging ? "scale-[0.98]" : ""
-													}`}
-												>
-													<div className="text-muted-foreground text-center">
-														<div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/80">
-															<Image
-																className="pointer-events-none"
-																src={images[currentSlide].image}
-																alt={images[currentSlide].title}
-																fill
-															/>
-														</div>
-														<p className="text-sm font-medium">
-															{images[currentSlide].title}
-														</p>
-													</div>
+				{/* Slider Section */}
+				<section className="py-4 sm:py-6 lg:py-8">
+					<div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+						<div className="relative">
+							<div
+								ref={sliderRef}
+								className="relative overflow-hidden rounded-lg select-none"
+								onMouseDown={handleMouseDown}
+								onMouseMove={handleMouseMove}
+								onMouseUp={handleMouseUp}
+								onMouseEnter={handleMouseEnter}
+								onMouseLeave={handleMouseLeave}
+								onTouchStart={handleTouchStart}
+								onTouchMove={handleTouchMove}
+								onTouchEnd={handleTouchEnd}
+								style={{ cursor: showCursor ? "none" : "grab" }}
+							>
+								<Card className="border-0 shadow-lg">
+									<div className="relative aspect-square w-full max-w-[1080px]">
+										<div
+											className={`absolute inset-0 flex items-center justify-center bg-gradient-to-br transition-all duration-300 ${
+												isDragging ? "scale-[0.98]" : ""
+											}`}
+										>
+											{/* Loading Spinner */}
+											{imageLoadings[currentSlide] && (
+												<div className="absolute inset-0 z-10 flex items-center justify-center bg-white/50">
+													<div className="h-12 w-12 animate-spin rounded-full border-4 border-purple-200 border-t-purple-600"></div>
 												</div>
-											</div>
-										</Card>
-									</div>
+											)}
 
-									<div className="mt-6 flex justify-center space-x-2">
-										{images.map((_, index) => (
-											<button
-												key={index}
-												onClick={() => goToSlide(index)}
-												className={`relative flex items-center justify-center transition-all duration-200 ${
-													index === currentSlide ? "h-6 w-6" : (
-														"h-6 w-6 hover:scale-110"
-													)
-												}`}
-												aria-label={`Aller à l'image ${index + 1}`}
-											>
-												{index === currentSlide ?
-													<div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-purple-600 bg-transparent">
-														<div className="h-2 w-2 rounded-full bg-purple-600"></div>
-													</div>
-												:	<div className="h-2 w-2 rounded-full bg-gray-300"></div>}
-											</button>
-										))}
+											<div className="text-muted-foreground text-center">
+												<div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/80">
+													{images.map(({ id, image, title }, i) => (
+														<Image
+															key={id}
+															className={cn(
+																"pointer-events-none",
+																currentSlide !== i && "hidden",
+															)}
+															src={image}
+															alt={title}
+															priority={i - currentSlide < 3}
+															fill
+															onLoadingComplete={() => {
+																console.log("wtf");
+																console.log(i);
+																setImageLoadings((prev) => {
+																	prev[i] = false;
+																	return [...prev];
+																});
+															}}
+														/>
+													))}
+												</div>
+												<p className="text-sm font-medium">
+													{images[currentSlide].title}
+												</p>
+											</div>
+										</div>
 									</div>
-								</div>
+								</Card>
 							</div>
-						</section>
-						<Footer />
-		</div>
+
+							<div className="mt-6 flex justify-center space-x-2">
+								{images.map((_, index) => (
+									<button
+										key={index}
+										onClick={() => goToSlide(index)}
+										className={`relative flex items-center justify-center transition-all duration-200 ${
+											index === currentSlide ? "h-6 w-6" : (
+												"h-6 w-6 hover:scale-110"
+											)
+										}`}
+										aria-label={`Aller à l'image ${index + 1}`}
+									>
+										{index === currentSlide ?
+											<div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-purple-600 bg-transparent">
+												<div className="h-2 w-2 rounded-full bg-purple-600"></div>
+											</div>
+										:	<div className="h-2 w-2 rounded-full bg-gray-300"></div>}
+									</button>
+								))}
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<Footer />
+			</div>
 		</div>
 	);
 }
