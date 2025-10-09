@@ -32,7 +32,7 @@ const translations = {
 		contact: "CONTACT",
 
 		// Hero Section
-		hero_title: "Hey, moi c'est Florence Viprey !",
+		hero_title: "Hey, moi, c'est Florence Viprey !",
 		hero_subtitle:
 			"Je suis chef de projet en Recherche et Développement en agroalimentaire et voici qui je suis...",
 
@@ -41,7 +41,7 @@ const translations = {
 		about_p1:
 			"Passionnée par l'innovation alimentaire et la pâtisserie, j'ai construit mon parcours professionnel pour le rendre le plus complet possible dans l'univers exigeant du sucré.",
 		about_p2:
-			"Mon profil allie une double expertise : la théorie par mon master en Innovation en Agro alimentaire (à l'ESIAB) et la pratique par mon CAP Pâtisserie + mon expérience terrain en production (via mon poste de chef de ligne chez Erhard et les industrialisations produits réalisées chez Pasquier ou Materne).",
+			"Mon profil allie une double expertise : la théorie par mon master en Innovation en Agro alimentaire (à l'ESIAB) et la pratique par mon CAP Pâtisserie ainsi que mon expérience terrain en production (via mon poste de chef de ligne chez Erhard et les industrialisations de produits réalisées chez Pasquier ou Materne).",
 		about_p3:
 			"Mon expertise couvre la formulation de produits, l'analyse sensorielle, l'analyse des risques et la gestion de projets R&D dans l'industrie agroalimentaire.",
 		about_p4:

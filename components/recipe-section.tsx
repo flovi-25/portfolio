@@ -13,7 +13,7 @@ import { Label } from "./ui/label";
 import { Switch } from "./ui/switch";
 
 const recipeData = {
-	title: "Coques de Macarons",
+	title: "Coques de macarons",
 	description:
 		"Ma recette signature pour réussir des coques de macarons parfaites. Technique professionnelle pour obtenir des macarons lisses, brillants et avec une belle collerette.",
 	difficulty: "Avancé",
@@ -26,7 +26,7 @@ const recipeData = {
 		{
 			category: "Pré-mélange sucre glace et amande",
 			items: [
-				{ name: "Sucre glace", quantity: "184g" },
+				{ name: "Sucre glace", quantity: "184 g" },
 				{ name: "Amande en poudre", quantity: "117g" },
 			],
 		},

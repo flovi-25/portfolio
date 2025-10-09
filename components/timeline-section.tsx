@@ -100,9 +100,9 @@ const timelineData = [
 		description:
 			"La conception du dessert magique, la naissance d'un dessert innovant et ludique à destination des enfants.",
 		achievements: [
-			"Prix spécial concours Louis Pasteur 2015",
+			"Prix spécial du concours Louis Pasteur 2015",
 			"Prix Mon projet en 180 secondes",
-			"Interview professionnelle",
+			"Participation à une interview professionnelle",
 		],
 	},
 	{
@@ -124,7 +124,7 @@ const timelineData = [
 		description:
 			"De Kroes Feuilletage m'a fait confiance malgré mon jeune âge lors de ce stage pour me laisser les rênes du développement d'un produit pour l'un de ses importants clients. La tâche fut rude pour convertir une ligne de production à un nouveau process mais fut couronnée de succès.",
 		achievements: [
-			"Commercialisation d'un cracker, 70 % d'avis client positifs",
+			"Commercialisation d'un cracker, 70 % d'avis clients positifs",
 			"Autonomie",
 		],
 	},
@@ -147,7 +147,7 @@ const timelineData = [
 		description:
 			"Erhard avec son catalogue de produits très étoffé, offre de nombreuses compétences produits et industrielles.",
 		achievements: [
-			"Baisse de 100% des ruptures journalières",
+			"Suppression de 100% des ruptures journalières",
 			"Exigence qualité maintenue à 100%",
 			"Zéro réclamation",
 		],
