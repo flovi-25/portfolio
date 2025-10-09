@@ -251,14 +251,12 @@ export default function CapPatissierPage() {
 														alt={title}
 														priority={i - currentSlide < 3}
 														fill
-														onLoadingComplete={() => {
-															console.log("wtf");
-															console.log(i);
+														onLoadingComplete={() =>
 															setImageLoadings((prev) => {
 																prev[i] = false;
 																return [...prev];
-															});
-														}}
+															})
+														}
 													/>
 												))}
 											</div>
