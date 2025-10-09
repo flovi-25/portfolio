@@ -187,7 +187,7 @@ export default function CreationsPage() {
 					</h2>
 					<p className="font-geometria text-muted-foreground mx-auto max-w-2xl text-lg">
 						Parce qu’une pâtisserie réussie, c’est autant le goût que l’émotion qu’elle évoque.
-						Découvrez quelques unes de mes dernières réalisations.
+						Découvrez quelques-unes de mes dernières réalisations.
 					</p>
 				</div>
 			</div>

@@ -62,17 +62,17 @@ export default function VoyagesPage() {
 					{/* Content Paragraphs */}
 					<div className="font-geometria space-y-6 text-base leading-relaxed text-gray-800 md:text-lg">
 						<p>
-							Un voyage est une expérience chargée en émotion et en découverte.
+							Un voyage est une expérience chargée d'émotions et en apprentissages.
 							Il est une source inépuisable de nouveaux défis et de découvertes.
-							Il est aussi être l'occasion de sortir de sa routine et de se
+							Il est aussi l'occasion de sortir de sa routine et de se
 							dépasser face à des situations nouvelles et souvent imprévues.
-							Voyager c'est aussi apprendre à se passer du superflu et d'aller à
-							l'essentiel en appréciant les bonheurs plus simples.
+							Voyager, c'est aussi apprendre à se passer du superflu et à aller à
+							l'essentiel en appréciant les bonheurs les plus simples.
 						</p>
 
 						<p>
-							En outre le voyage permet surtout d'ouvrir son esprit à d'autres
-							façon de penser et à développer sa créativité.
+							En outre, le voyage permet surtout d'ouvrir son esprit à d'autres
+							façons de penser et à développer sa créativité.
 						</p>
 					</div>
 				</div>

@@ -85,11 +85,11 @@ export default function ConcoursPage() {
 					{/* Title Section */}
 					<div className="mb-12 translate-y-0 text-center opacity-100 transition-all duration-1000">
 						<h1 className="mb-8 font-serif text-4xl font-light tracking-wider text-purple-600 transition-colors duration-300 hover:text-purple-700 sm:text-5xl md:text-6xl">
-							Concours
+							Concours :
 						</h1>
 						<div className="mx-auto max-w-4xl">
 							<p className="font-geometria text-lg leading-relaxed text-gray-700 sm:text-xl">
-								ou comment sortir de sa zone de confort.
+								là où commence le dépassement de soi.
 							</p>
 						</div>
 					</div>
