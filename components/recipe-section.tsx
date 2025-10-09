@@ -167,7 +167,7 @@ export function RecipeSection() {
 	};
 
 	return (
-		<section className="bg-gradient-to-br from-purple-50 to-pink-50 px-6 py-12">
+		<section className="bg-white px-6 py-12">
 			<div className="mx-auto max-w-6xl">
 				{/* Header */}
 				<div className="mb-16 text-center">

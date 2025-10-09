@@ -4,7 +4,6 @@ import { useLanguage } from "@/hooks/use-language";
 import { motion } from "framer-motion";
 import { FileText } from "lucide-react";
 import Image from "next/image";
-import { ExpertiseSection } from "@/components/expertise-section";
 
 const bounceTransition = {
 	y: {
@@ -19,20 +18,17 @@ export function HeroSection() {
 	const { t } = useLanguage();
 
 	return (
-		<section className="relative overflow-hidden w-full bg-gradient-to-br to-pink-50 from-purple-50 mt-25 px-4 py-3 sm:px-6 sm:py-4">
-			<div className="absolute inset-0 flex items-center justify-center">
-				<div className="relative w-full max-w-6xl h-[1078px] mx-auto overflow-hidden">
-						<Image
-							src="/images/macaron-fv.jpg"
-							alt="fv"
-							priority
-							fill
-							className="object-cover w-full md:-translate-x-16 transition-transform duration-300"
-						/>
-
+		<section className="relative object-fit-cover left-0 md:right-0 bg-cover overflow-hidden w-full bg-white bg-center p-1em min-h-screen min-w-screen">
+			<div className="absolute inset-0 flex items-center justify-center min-h-screen min-w-screen">
+				<div className="relative w-full h-full min-h-screen min-w-screen items-center  bg-cover display-none max-w-full  mx-auto overflow-clip ">
+					<Image
+						src="/images/macaron-fv2.PNG"
+						alt="fv"
+						priority
+						fill
+						className="object-cover w-full h-full md:-translate-x-16 transition-transform duration-300"
+					/>
 				</div>
-
-
 			</div>
 
 			{/* Superposed Text Content */}
@@ -46,41 +42,42 @@ export function HeroSection() {
 						{t("hero_subtitle")}
 					</p>
 
-			{/* les deux boutons */}
-		<div className="absolute inset-0 flex items-end justify-center pointer-events-none pb-10">
-			<div className="flex gap-6 pointer-events-auto flex-col sm:flex-row items-center">
-				<Button
-					asChild
-					size="lg"
-					className="bg-pink-800/40 hover:bg-purple-400/50 text-white border border-white/20 shadow-xl px-6 py-3 text-lg"
-				>
-					<a href="#expertise-section"
-						className="flex items-center gap-2"
-					>
+					{/* les deux boutons */}
+					<h2 className="absolute inset-0 flex items-end justify-center pointer-events-none pb-10">
+						<div className="flex gap-6 pointer-events-auto flex-col mt-5 mb-8 sm:flex-row items-center">
+						<Button
+						asChild
+						size="lg"
+						className="bg-pink-800/40 hover:bg-purple-400/50 text-white border border-white/20 shadow-xl px-6 py-3 text-lg"
+						>
+						<a
+							href="#expertise-section"
+							className="flex items-center gap-2"
+						>
 						<FileText className="h-4 w-4" />
 						{t("Découvrir mes challenges")}
-					</a>
-				</Button>
-				<Button
-					asChild
-					size="lg"
-					className="bg-pink-800/40 hover:bg-purple-400/50 text-white border border-white/20 shadow-xl px-6 py-3 text-lg"
-				>
-					<a
-						href="/Florence VIPREY cv 2025.pdf"
-						target="_blank"
-						className="flex items-center gap-2"
-						rel="noreferrer nofollow"
-					>
-						<FileText className="h-4 w-4" />
-						{t("Ouvrir mon CV")}
-					</a>
-				</Button>
-			</div>
-			</div>
+						</a>
+						</Button>
+							<Button
+							asChild
+							size="lg"
+							className="bg-pink-800/40 hover:bg-purple-400/50 text-white border border-white/20 shadow-xl px-6 py-3 text-lg"
+							>
+							<a
+								href="/Florence VIPREY cv 2025.pdf"
+								target="_blank"
+								className="flex items-center gap-2"
+								rel="noreferrer nofollow"
+							>
+							<FileText className="h-4 w-4" />
+							{t("Ouvrir mon CV")}
+							</a>
+						</Button>
+						</div>
+					</h2>
 
 					{/* Arrow */}
-						<div className="flex justify-left  mt-10 mb-8">
+					<p className="flex justify-left  mt-30 mb-8">
 										<motion.div
 												animate={{
 													opacity: [0, 1, 0],
@@ -99,11 +96,12 @@ export function HeroSection() {
 														alt="scroll down"
 												/>
 										</motion.div>
-						</div>
+					</p>
+				</div>
 			</div>
 
 
-		</div>
+
 		</section>
 	);
 }

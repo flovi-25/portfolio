@@ -15,7 +15,7 @@ export function Header() {
 	const { t } = useLanguage();
 
 		return (
-			<header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-pink-50 to-purple-50 px-4 py-3 sm:px-6 sm:py-4 shadow-md">
+			<header className="sticky top-0 left-0 w-full z-50 bg-white px-4 py-3 sm:px-6 sm:py-4 shadow-md">
 			<div className="relative mx-auto mt-3 mb-25 flex max-w-7xl items-center justify-center sm:mb-15">
 				<div className="absolute left-0 z-50">
 					<DropdownMenu>

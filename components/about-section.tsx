@@ -7,7 +7,7 @@ export function AboutSection() {
 	const { t } = useLanguage();
 
 	return (
-		<section className="bg-gradient-to-br from-pink-50 to-purple-50 px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
+		<section className="bg-gradient-to-br from-purple-100 to-pink-50 px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
 			<div className="mx-auto max-w-6xl">
 				<div className="grid items-start gap-8 sm:gap-12 lg:grid-cols-[2fr_1fr] lg:gap-20">
 					<div>

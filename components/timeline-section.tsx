@@ -236,7 +236,7 @@ export function TimelineSection() {
 	}, [animatedItems]);
 
 	return (
-		<section className="bg-gradient-to-br from-pink-50 to-purple-50 px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
+		<section className="bg-gradient-to-tr from-purple-100 to-pink-50 px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
 			<div className="mx-auto max-w-6xl" ref={sectionRef}>
 				{/* Header */}
 				<div className="mb-8 text-center sm:mb-12 md:mb-16">

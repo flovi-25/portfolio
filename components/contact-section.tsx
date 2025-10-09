@@ -6,7 +6,7 @@ import { Instagram, Linkedin, Mail } from "lucide-react";
 
 export function ContactSection() {
 	return (
-		<section className="bg-gradient-to-br from-pink-50 to-purple-50 px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
+		<section className="bg-gradient-to-br from-purple-100 to-pink-50 px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8">
 			<div className="mx-auto text-center">
 				<h2 className="mb-4 font-serif text-3xl font-bold text-slate-800 sm:mb-6 sm:text-4xl md:text-5xl">
 					Contact
