@@ -54,13 +54,13 @@ export default function LoireVeloPage() {
 							</h2>
 							<div className="backdrop-blur-2xs rounded-xl bg-white/10 p-6 sm:p-8">
 								<p className="font-geometria text-lg leading-relaxed text-white drop-shadow-md sm:text-justify sm:text-xl">
-									De Blois à Chambord en passant par Chaumond, Amboise,
+									De Blois à Chambord en passant par Chaumont, Amboise,
 									Chenonceau ou Cheverny, que notre patrimoine français est
-									époustouflant. Ce périple fut une parenthèse suspendue dans le
+									époustouflant! Ce périple fut une parenthèse suspendue dans le
 									temps au rythme doux de mon pédalier et de ma fille de 3 ans
 									(bien installée dans sa remorque 😴). Il marqua un tournant
 									dans nos vies, nous prouvant que les aventures n'ont pas d'âge
-									requis et que la seule limite à nos défis est notre volonté à
+									requis et que la seule limite à nos défis est notre volonté de
 									les accomplir.
 								</p>
 								<br />
