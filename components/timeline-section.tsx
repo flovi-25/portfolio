@@ -122,7 +122,7 @@ const timelineData = [
 		company: "De Kroes Feuilletage",
 		location: "Semur en Auxois(21), France",
 		description:
-			"De Kroes Feuilletage m'a fait confiance malgré mon jeune âge lors de ce stage pour mes laisser les reines du développement d'un produit pour l'un de ces importants clients. La tâche fut rude pour convertir une ligne de production à un nouveau proccess mais fut couronnée de succès.",
+			"De Kroes Feuilletage m'a fait confiance malgré mon jeune âge lors de ce stage pour mes laisser les rênes du développement d'un produit pour l'un de ces importants clients. La tâche fut rude pour convertir une ligne de production à un nouveau proccess mais fut couronnée de succès.",
 		achievements: [
 			"Commercialisation d'un cracker, 70% d'avis client positifs",
 			"Autonomie",
@@ -136,7 +136,7 @@ const timelineData = [
 		location: "Besançon (25), France",
 		description:
 			"Il est un tremplin vers un univers gourmand où les combinaisons sont infinies. Il est également un atout précieux sur le marché du travail pour allier la pratique à la théorie de mes études en innovation en agroalimentaire.",
-		achievements: ["Acquisition de techniques"],
+		achievements: ["Perfectionnement des techniques pâtissières",  "Mise en place de méthodes d’organisation efficaces pour rationaliser les processus de production"],
 	},
 	{
 		id: 6,
