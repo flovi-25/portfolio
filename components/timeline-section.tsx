@@ -182,7 +182,7 @@ const timelineData = [
 		company: "Materne Industries",
 		location: "Boué (02), France",
 		description:
-			"Business B to B français et international. Participer à des projets techniquement riches et variés, en collaboration avec des interlocuteurs pluridisciplinaires. Planifier, suivre et finaliser de projets R&D dans un environnement industriel dynamique et exigeant. Encadrement d'une chef de projet R&D junior.",
+			"Business B-to-B français et international. Participant à des projets techniquement riches et variés, en collaboration avec des interlocuteurs pluridisciplinaires. Planifier, suivi et finalisationÉvolution dans un environnement business B-to-B, en France et à l’international. J’ai participé à des projets techniquement riches et variés, en collaboration avec des interlocuteurs pluridisciplinaires. J’ai planifié, suivi et finalisé des projets R&D dans un environnement industriel dynamique et exigeant. J’ai encadré une cheffe de projet R&D junior. de projets R&D dans un environnement industriel dynamique et exigeant. Encadrement d'une chef de projet R&D junior.",
 		achievements: [
 			"Acquisition d'un nouveau marché à plus de 100T/an",
 			"Pratique de l'anglais professionel",
