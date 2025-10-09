@@ -47,7 +47,7 @@ const expertiseAreas = [
 	{
 		icon: Bike,
 		title: "Aventure",
-		description: "La loire à vélo",
+		description: "La Loire à vélo",
 		link: "/loire-velo",
 	},
 ];

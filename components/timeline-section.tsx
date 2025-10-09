@@ -132,7 +132,7 @@ const timelineData = [
 		id: 5,
 		year: "2015 - 2016",
 		title: "CAP Pâtissier",
-		company: "Academie de Besançon",
+		company: "Académie de Besançon",
 		location: "Besançon (25), France",
 		description:
 			"Ce CAP est un tremplin vers un univers gourmand où les combinaisons sont infinies. Il est également un atout précieux sur le marché du travail pour allier la pratique à la théorie de mes études en innovation en agroalimentaire.",
@@ -143,7 +143,7 @@ const timelineData = [
 		year: "2017 - 2021",
 		title: "Chef de ligne de production et assistant approvisionnement",
 		company: "Erhard",
-		location: "Thurey Le Mont (25), France",
+		location: "Thurey-Le-Mont (25), France",
 		description:
 			"Erhard avec son catalogue de produits très étoffé, offre de nombreuses compétences produits et industrielles.",
 		achievements: [
@@ -161,7 +161,7 @@ const timelineData = [
 		description:
 			"De l'identification des besoins au lancement d'un produit, les étapes sont passionnantes et diversifiées. Le groupe Pasquier offre l'opportunité de s'épanouir lors du processus de développement en mettant la main à la pâte et en étant un pilier central.",
 		achievements: [
-			"Elargissement de l'offre de plus 50 % pour un client majeur international",
+			"Elargissement de l'offre de plus de 50 % pour un client majeur international",
 			"Industrialisation de deux innovations primées au Snacking d'Or 2025",
 		],
 	},
