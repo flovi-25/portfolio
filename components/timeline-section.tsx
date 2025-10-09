@@ -88,7 +88,7 @@ const timelineData = [
 		company: "Voyage personnel",
 		location: "Côte Est, Chine",
 		description:
-			"Il s'agit là de mon tout premier voyage, pas encore majeur mais déjà avec une soif d'aller découvrir le monde et ses habitants. Ces deux mois passé à partager le quotidien d'une famille chinoise m'ont éclairé sur le fait que nous avons tous à apprendre des autres cultures.",
+			"Il s’agit là de mon tout premier voyage, pas encore majeur, mais déjà avec une soif d’aller découvrir le monde et ses habitants. Ces deux mois passés à partager le quotidien d’une famille chinoise m’ont éclairé sur le fait que nous avons tous à apprendre des autres cultures.",
 		achievements: ["Aventure"],
 	},
 	{
