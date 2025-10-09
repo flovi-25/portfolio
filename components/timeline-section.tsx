@@ -162,7 +162,7 @@ const timelineData = [
 			"De l'identification des besoins au lancement d'un produit, les étapes sont passionnantes et diversifiées. Le groupe Pasquier offre l'opportunité de s'épanouir lors du processus de développement en mettant la main à la pâte et en étant un pilier central.",
 		achievements: [
 			"Elargissement de l'offre de plus 50% pour un client majeur international",
-			"Industrialisation des Duos",
+			"Industrialisation de deux innovations primées au Snacking d'Or 2025",
 		],
 	},
 	{
