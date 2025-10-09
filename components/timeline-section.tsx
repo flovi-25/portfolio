@@ -88,7 +88,7 @@ const timelineData = [
 		company: "Voyage personnel",
 		location: "Côte Est, Chine",
 		description:
-			"Il s’agit là de mon tout premier voyage, pas encore majeur, mais déjà avec une soif d’aller découvrir le monde et ses habitants. Ces deux mois passés à partager le quotidien d’une famille chinoise m’ont éclairé sur le fait que nous avons tous à apprendre des autres cultures.",
+			"Il s’agit là de mon tout premier voyage, pas encore majeure, mais déjà avec une soif d’aller découvrir le monde et ses habitants. Ces deux mois passés à partager le quotidien d’une famille chinoise m’ont éclairée sur le fait que nous avons tous à apprendre des autres cultures.",
 		achievements: ["Aventure"],
 	},
 	{
@@ -102,7 +102,7 @@ const timelineData = [
 		achievements: [
 			"Prix spécial concours Louis Pasteur 2015",
 			"Prix Mon projet en 180 secondes",
-			"Interview professionnel",
+			"Interview professionnelle",
 		],
 	},
 	{
@@ -113,7 +113,7 @@ const timelineData = [
 		location: "Pays de Galles",
 		description:
 			"Wrexham University est un lieu de savoir cosmopolite où les étudiants et les professeurs des quatre coins du monde se rencontrent.",
-		achievements: ["Apprentisage de l'anglais"],
+		achievements: ["Apprentissage de l'anglais"],
 	},
 	{
 		id: 4,
@@ -122,9 +122,9 @@ const timelineData = [
 		company: "De Kroes Feuilletage",
 		location: "Semur en Auxois(21), France",
 		description:
-			"De Kroes Feuilletage m'a fait confiance malgré mon jeune âge lors de ce stage pour mes laisser les rênes du développement d'un produit pour l'un de ces importants clients. La tâche fut rude pour convertir une ligne de production à un nouveau proccess mais fut couronnée de succès.",
+			"De Kroes Feuilletage m'a fait confiance malgré mon jeune âge lors de ce stage pour me laisser les rênes du développement d'un produit pour l'un de ses importants clients. La tâche fut rude pour convertir une ligne de production à un nouveau process mais fut couronnée de succès.",
 		achievements: [
-			"Commercialisation d'un cracker, 70% d'avis client positifs",
+			"Commercialisation d'un cracker, 70 % d'avis client positifs",
 			"Autonomie",
 		],
 	},
@@ -135,7 +135,7 @@ const timelineData = [
 		company: "Academie de Besançon",
 		location: "Besançon (25), France",
 		description:
-			"Il est un tremplin vers un univers gourmand où les combinaisons sont infinies. Il est également un atout précieux sur le marché du travail pour allier la pratique à la théorie de mes études en innovation en agroalimentaire.",
+			"Ce CAP est un tremplin vers un univers gourmand où les combinaisons sont infinies. Il est également un atout précieux sur le marché du travail pour allier la pratique à la théorie de mes études en innovation en agroalimentaire.",
 		achievements: ["Perfectionnement des techniques pâtissières",  "Mise en place de méthodes d’organisation efficaces pour rationaliser les processus de production"],
 	},
 	{
@@ -161,7 +161,7 @@ const timelineData = [
 		description:
 			"De l'identification des besoins au lancement d'un produit, les étapes sont passionnantes et diversifiées. Le groupe Pasquier offre l'opportunité de s'épanouir lors du processus de développement en mettant la main à la pâte et en étant un pilier central.",
 		achievements: [
-			"Elargissement de l'offre de plus 50% pour un client majeur international",
+			"Elargissement de l'offre de plus 50 % pour un client majeur international",
 			"Industrialisation de deux innovations primées au Snacking d'Or 2025",
 		],
 	},
@@ -181,11 +181,10 @@ const timelineData = [
 		title: "Chef de projet recherche et développement",
 		company: "Materne Industries",
 		location: "Boué (02), France",
-		description:
-			"Business B-to-B français et international. Participant à des projets techniquement riches et variés, en collaboration avec des interlocuteurs pluridisciplinaires. Planifier, suivi et finalisationÉvolution dans un environnement business B-to-B, en France et à l’international. J’ai participé à des projets techniquement riches et variés, en collaboration avec des interlocuteurs pluridisciplinaires. J’ai planifié, suivi et finalisé des projets R&D dans un environnement industriel dynamique et exigeant. J’ai encadré une cheffe de projet R&D junior. de projets R&D dans un environnement industriel dynamique et exigeant. Encadrement d'une chef de projet R&D junior.",
+		description:"Évolution dans un environnement business B-to-B, en France et à l’international. J’ai participé à des projets techniquement riches et variés, en collaboration avec des interlocuteurs pluridisciplinaires. J’ai planifié, suivi et finalisé des projets R&D dans un environnement industriel dynamique et exigeant. J’ai encadré une cheffe de projet R&D junior.",
 		achievements: [
-			"Acquisition d'un nouveau marché à plus de 100T/an",
-			"Pratique de l'anglais professionel",
+			"Acquisition d'un nouveau marché à plus de 100 T/an",
+			"Pratique de l'anglais professionnel",
 			"Management",
 		],
 	},
