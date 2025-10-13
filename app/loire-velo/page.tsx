@@ -65,9 +65,7 @@ export default function LoireVeloPage() {
 								</p>
 								<br />
 								<p className="font-geometria text-lg leading-relaxed text-white drop-shadow-md sm:text-justify sm:text-xl">
-									De Nevers à Saint-Nazaire, en passant par Orléans, Blois,
-									Tours et Angers, chaque étape révèle les trésors du Val de
-									Loire, classé au patrimoine mondial de l'UNESCO. Une aventure
+									Une aventure
 									qui mêle sport, culture et découverte du patrimoine français.
 								</p>
 							</div>
