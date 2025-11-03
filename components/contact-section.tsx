@@ -56,7 +56,7 @@ export function ContactSection() {
 					</a>
 
 					<a
-						href="https://www.instagram.com/florences_challenges/"
+						href="https://www.instagram.com/florence_challenges/"
 						target="_blank"
 						rel="noreferrer nofollow"
 					>
@@ -66,7 +66,7 @@ export function ContactSection() {
 								Instagram
 							</h3>
 							<p className="text-muted-foreground text-xs sm:text-sm">
-								@florences_challenges
+								@florence_challenges
 							</p>
 						</Card>
 					</a>
