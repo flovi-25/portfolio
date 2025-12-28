@@ -8,7 +8,6 @@ import { HeroSection } from "@/components/hero-section";
 import { RecipeSection } from "@/components/recipe-section";
 import { TimelineSection } from "@/components/timeline-section";
 
-//test
 export default function Page() {
 	return (
 	 <div className="bg-white min-h-screen">
